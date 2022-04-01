@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.softsquared.template.kotlin">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".config.ApplicationClass"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="AllowBackup">
+        <meta-data
+            android:name="com.naver.maps.map.CLIENT_ID"
+            android:value="je7fg2vbzp" />
+
+        <activity
+            android:name=".src.splash.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoStatusBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".src.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.WhiteStatusBar" />
+        <activity
+            android:name=".src.main.start.StartActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoStatusBar" />
+        <activity
+            android:name=".src.main.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.WhiteStatusBar"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".src.main.favorite.FavoriteActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.WhiteStatusBar" />
+
+        <activity
+            android:name=".src.main.review.ReviewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.WhiteStatusBar" />
+
+        <activity
+            android:name=".src.main.reviewWrite.ReviewWriteActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.WhiteStatusBar" />
+
+        <activity
+            android:name=".src.main.join.JoinActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.WhiteStatusBar" />
+
+        <activity
+            android:name=".src.main.order.OrderActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.WhiteStatusBar" />
+
+        <activity
+            android:name=".src.main.delivery.DeliveryActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.WhiteStatusBar" />
+
+        <activity
+            android:name=".src.main.storeInfo.StoreInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.TransparentStatusBar" />
+
+        <activity
+            android:name=".src.main.storeInfo.map.StoreInfoMapActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.WhiteStatusBar" />
+
+        <activity
+            android:name=".src.main.location.selectMap.SelectMapActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.WhiteStatusBar" />
+
+        <activity
+            android:name=".src.main.location.add.map.LocationAddMapActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.WhiteStatusBar" />
+
+        <activity
+            android:name=".src.main.location.LocationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.WhiteStatusBar" />
+
+        <activity
+            android:name=".src.main.location.add.LocationAddActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.WhiteStatusBar"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".src.main.storeInfo.menu.StoreInfoMenuDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.WhiteStatusBar" />
+
+        <activity
+            android:name=".src.main.order.dialog.OrderOverCountDialog"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+
+        <activity
+            android:name=".src.main.order.dialog.OrderCountDialog"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+
+        <activity
+            android:name=".src.main.orderList.dialog.ReviewReceiptDialog"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+    </application>
+
+</manifest>

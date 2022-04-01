@@ -1,0 +1,61 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <!-- Container -->
+    <dimen name="activity_big_margin">20dp</dimen>
+    <dimen name="activity_horizontal_margin">20dp</dimen>
+    <dimen name="activity_vertical_margin">20dp</dimen>
+    <dimen name="bottom_sheet_top_margin">20dp</dimen>
+    <dimen name="store_title_top_padding">24dp</dimen>
+    <dimen name="view_margin_16">16dp</dimen>
+    <dimen name="view_margin_10">10dp</dimen>
+    <dimen name="view_margin_14">14dp</dimen>
+    <dimen name="view_margin_12">12dp</dimen>
+    <dimen name="view_margin_15">15dp</dimen>
+    <dimen name="view_margin_8">8dp</dimen>
+    <dimen name="login_big_margin">60dp</dimen>
+    <dimen name="div_big_size">4dp</dimen>
+
+    <!-- Button -->
+    <dimen name="button_padding_12">12dp</dimen>
+    <dimen name="button_text_size">14sp</dimen>
+    <dimen name="button_biggest_padding">16dp</dimen>
+
+    <!-- Indicator -->
+    <dimen name="indicator_margin">4dp</dimen>
+
+    <!-- BottomNavigation -->
+    <dimen name="design_bottom_navigation_active_text_size" tools:override="true">10sp</dimen>
+    <dimen name="design_bottom_navigation_text_size" tools:override="true">10sp</dimen>
+
+    <!-- TextView -->
+    <dimen name="text_title">22sp</dimen>
+    <dimen name="text_content_20">20sp</dimen>
+    <dimen name="text_content_18">18sp</dimen>
+    <dimen name="text_content_16">16sp</dimen>
+    <dimen name="text_content_15">15sp</dimen>
+    <dimen name="text_content_14">14sp</dimen>
+    <dimen name="text_content_12">12sp</dimen>
+    <dimen name="text_content_10">10sp</dimen>
+
+    <dimen name="text_padding_4">4dp</dimen>
+
+    <dimen name="text_margin_4">4dp</dimen>
+    <dimen name="text_margin_8">8dp</dimen>
+
+    <dimen name="text_store_banner_margin">45dp</dimen>
+
+
+    <!-- ImageView -->
+    <dimen name="image_normal_padding">8dp</dimen>
+    <dimen name="image_banner_size">180dp</dimen>
+    <dimen name="image_store_food_size">200dp</dimen>
+    <dimen name="image_location_icon_size">14dp</dimen>
+    <dimen name="image_store_width_size">40dp</dimen>
+    <dimen name="image_store_height_size">20dp</dimen>
+
+    <!-- EditText -->
+    <dimen name="edit_text_normal_padding">12dp</dimen>
+    <dimen name="view_margin_6">6dp</dimen>
+
+</resources>

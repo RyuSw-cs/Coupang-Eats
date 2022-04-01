@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/activity_vertical_margin"
+    android:layout_marginEnd="@dimen/activity_vertical_margin"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/iv_home_item_main_img"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/grayForPictureBackground"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_home_item_third_img"
+        app:layout_constraintEnd_toStartOf="@id/iv_home_item_second_img"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/iv_home_item_second_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/grayForPictureBackground"
+        android:paddingStart="4dp"
+        android:paddingBottom="4dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_home_item_third_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/grayForPictureBackground"
+        android:paddingStart="4dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_home_item_second_img" />
+
+    <TextView
+        android:id="@+id/tv_home_item_store_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/view_margin_10"
+        android:text="가게이름"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_18"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_home_item_third_img" />
+
+    <ImageView
+        android:id="@+id/tv_cheetah"
+        android:layout_width="75dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="@dimen/view_margin_6"
+        android:src="@drawable/ic_store_fast_delivery"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/tv_home_item_store_title"
+        app:layout_constraintStart_toEndOf="@id/tv_home_item_store_title"
+        app:layout_constraintTop_toTopOf="@id/tv_home_item_store_title" />
+
+    <TextView
+        android:id="@+id/tv_item_delivery_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:text="배달시간"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_14"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_home_item_store_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_home_item_store_title" />
+
+    <ImageView
+        android:id="@+id/iv_home_item_fast_delivery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/tv_home_item_store_title"
+        app:layout_constraintStart_toEndOf="@+id/tv_home_item_store_title"
+        app:layout_constraintTop_toTopOf="@id/tv_home_item_store_title" />
+
+    <ImageView
+        android:id="@+id/iv_home_item_star"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="@dimen/view_margin_10"
+        android:layout_marginBottom="9dp"
+        android:src="@drawable/ic_star"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_item_home_rating"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_item_home_rating" />
+
+    <TextView
+        android:id="@+id/tv_item_home_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:text="별점"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_14"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_item_review_count"
+        app:layout_constraintStart_toEndOf="@id/iv_home_item_star"
+        app:layout_constraintTop_toTopOf="@+id/tv_item_review_count" />
+
+    <TextView
+        android:id="@+id/tv_item_review_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:text=" (리뷰개수)"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_14"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_item_distance"
+        app:layout_constraintStart_toEndOf="@+id/tv_item_home_rating"
+        app:layout_constraintTop_toTopOf="@+id/tv_item_distance" />
+
+    <TextView
+        android:id="@+id/tv_item_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:padding="2dp"
+        android:text="거리"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_14"
+        app:layout_constraintStart_toEndOf="@id/tv_item_review_count"
+        app:layout_constraintTop_toBottomOf="@+id/tv_home_item_store_title" />
+
+    <TextView
+        android:id="@+id/tv_item_delivery_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:text="배달비 가격"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_14"
+        app:layout_constraintBottom_toBottomOf="@id/tv_item_distance"
+        app:layout_constraintStart_toEndOf="@id/tv_item_distance"
+        app:layout_constraintTop_toTopOf="@id/tv_item_distance" />
+
+    <LinearLayout
+        android:id="@+id/ly_item_more_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin_4"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_item_delivery_price">
+
+        <TextView
+            android:id="@+id/tv_new_store"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_favorite_new"
+            android:paddingLeft="6dp"
+            android:paddingTop="2dp"
+            android:paddingRight="6dp"
+            android:layout_marginEnd="@dimen/text_margin_4"
+            android:paddingBottom="2dp"
+            android:text="신규"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_content_12"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_item_coupon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/text_margin_4"
+            android:background="@drawable/bg_store_list_coupon"
+            android:drawableStart="@drawable/ic_main_coupon_tag"
+            android:drawablePadding="2dp"
+            android:paddingLeft="6dp"
+            android:paddingTop="2dp"
+            android:paddingRight="6dp"
+            android:paddingBottom="2dp"
+            android:text="1,000원 쿠폰"
+            android:textColor="@color/blueForText"
+            android:textSize="@dimen/text_content_12"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_item_take_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_store_list_take_out"
+            android:paddingLeft="6dp"
+            android:paddingTop="2dp"
+            android:paddingRight="6dp"
+            android:paddingBottom="2dp"
+            android:text="포장 가능"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_content_12"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

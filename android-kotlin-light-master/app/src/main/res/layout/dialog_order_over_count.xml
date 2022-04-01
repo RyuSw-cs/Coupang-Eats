@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/white"
+    android:background="@drawable/bg_map_btn">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:text="수량변경"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_18"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/view_margin_12"
+        android:text="최대 가능수량은 "
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <TextView
+        android:id="@+id/tv_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_12"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tv_content"
+        app:layout_constraintStart_toEndOf="@id/tv_content"
+        app:layout_constraintTop_toTopOf="@id/tv_content" />
+
+    <TextView
+        android:id="@+id/tv_content_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:text="개 입니다"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_12"
+        app:layout_constraintBottom_toBottomOf="@id/tv_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_count"
+        app:layout_constraintTop_toTopOf="@id/tv_content" />
+
+    <LinearLayout
+        android:id="@+id/ly_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_content">
+
+        <Button
+            android:id="@+id/bt_minus"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@drawable/bg_menu_minus"
+            android:minWidth="1dp"
+            android:minHeight="1dp"
+            android:textColor="@color/grayForText"
+            android:textSize="@dimen/text_content_14" />
+
+        <TextView
+            android:id="@+id/tv_order_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/text_margin_8"
+            android:layout_marginEnd="@dimen/text_margin_8"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_16"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/bt_plus"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@drawable/bg_menu_plus_able"
+            android:minWidth="1dp"
+            android:minHeight="1dp"
+            android:textColor="@color/grayForText"
+            android:textSize="@dimen/text_content_14" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ly_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_count">
+
+        <Button
+            android:id="@+id/bt_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_coupon_select"
+            android:minWidth="1dp"
+            android:minHeight="1dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:text="취소"
+            android:textColor="@color/blueForBtn"
+            android:textSize="@dimen/text_content_14"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/bt_apply"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_coupon_select"
+            android:backgroundTint="@color/blueForBtn"
+            android:minWidth="1dp"
+            android:minHeight="1dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:text="확인"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_content_14"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

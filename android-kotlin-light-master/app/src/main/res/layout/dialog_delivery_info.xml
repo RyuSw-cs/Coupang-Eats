@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ly_delivery_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginStart="@dimen/view_margin_12"
+    android:layout_marginEnd="@dimen/view_margin_12"
+    android:background="@drawable/bg_dialog_circle">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_delivery_dialog_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="배달비 안내"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_delivery_dialog_price_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:text="주문금액"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_delivery_dialog_title" />
+
+        <TextView
+            android:id="@+id/tv_delivery_dialog_fee_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:text="배달비"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_delivery_dialog_title" />
+
+        <View
+            android:id="@+id/div_delivery_dialog_content"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/view_margin_12"
+            android:layout_marginEnd="@dimen/activity_vertical_margin"
+            android:background="@color/grayForDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_delivery_dialog_price_title" />
+
+        <TextView
+            android:id="@+id/tv_delivery_dialog_price_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/view_margin_12"
+            android:lineSpacingExtra="@dimen/view_margin_12"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_14"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/div_delivery_dialog_content" />
+
+        <TextView
+            android:id="@+id/tv_delivery_dialog_fee_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_margin_12"
+            android:layout_marginEnd="@dimen/activity_vertical_margin"
+            android:lineSpacingExtra="@dimen/view_margin_12"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/div_delivery_dialog_content" />
+
+        <View
+            android:id="@+id/div_delivery_dialog_end"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@color/blueForText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_delivery_dialog_fee_content" />
+
+        <Button
+            android:id="@+id/bt_delivery_apply"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="확인"
+            android:textColor="@color/blueForText"
+            android:textSize="@dimen/text_content_18"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/div_delivery_dialog_end" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

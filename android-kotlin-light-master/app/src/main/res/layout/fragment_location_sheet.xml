@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="@dimen/activity_big_margin">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="상세 주소를 입력하세요"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="아파트명/동/호 등의 정보를 입력하시면 더 정확하게 배달할 수 있습니다."
+        android:textColor="@color/grayForText"
+        android:textSize="@dimen/text_content_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_input_detail_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_app_login"
+        android:elevation="0dp"
+        android:padding="16dp"
+        android:stateListAnimator="@null"
+        android:text="상세 주소 입력"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_content_16"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_content" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_ignore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_ignore"
+        android:elevation="0dp"
+        android:padding="16dp"
+        android:stateListAnimator="@null"
+        android:text="무시하기"
+        android:textColor="@color/blueForText"
+        android:textSize="@dimen/text_content_16"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_input_detail_address" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

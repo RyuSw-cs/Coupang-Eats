@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_store_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:text="음식점이름 (으)로 배달"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_16"
+        app:layout_constraintEnd_toStartOf="@+id/bt_address_modify"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/view_margin_6"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/view_margin_16"
+        android:text="상세주소가 들어감"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_18"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bt_address_modify"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_store_title" />
+
+    <Button
+        android:id="@+id/bt_address_modify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:background="@color/transparent"
+        android:minWidth="1dp"
+        android:minHeight="1dp"
+        android:padding="4dp"
+        android:text="수정"
+        android:textColor="@color/blueForText"
+        android:textSize="@dimen/text_content_14"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tv_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_store_title" />
+</androidx.constraintlayout.widget.ConstraintLayout>

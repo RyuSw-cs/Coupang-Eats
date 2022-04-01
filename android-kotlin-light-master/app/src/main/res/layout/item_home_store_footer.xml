@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <View
+        android:id="@+id/div_enc"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/div_big_size"
+        android:background="@color/grayForPictureBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_last_list_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:text="@string/home_tv_last_title"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_18"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/div_enc" />
+
+    <TextView
+        android:id="@+id/tv_last_list_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/view_margin_8"
+        android:text="@string/home_tv_last_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_last_list_title" />
+
+    <LinearLayout
+        android:id="@+id/ly_eats_popular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/text_margin_4"
+        android:orientation="horizontal"
+        android:padding="@dimen/activity_vertical_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_last_list_content">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/view_margin_16"
+            android:layout_weight="1"
+            android:src="@drawable/ic_home_eats_popular" />
+
+        <TextView
+            android:id="@+id/tv_eats_popular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="17"
+            android:text="@string/home_tv_eats_popular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_18"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/ic_agree_more_info" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_biggest_review"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/activity_vertical_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_eats_popular">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_gravity="start"
+            android:layout_marginEnd="@dimen/view_margin_16"
+            android:layout_weight="1"
+            android:src="@drawable/ic_home_biggest_review" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="17"
+            android:text="@string/home_tv_biggest_review"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_18"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_agree_more_info" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_biggest_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/activity_vertical_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_biggest_review">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_gravity="start"
+            android:layout_marginEnd="@dimen/view_margin_16"
+            android:layout_weight="1"
+            android:src="@drawable/ic_home_biggest_order" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="17"
+            android:text="@string/home_tv_biggest_order"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_18"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_agree_more_info" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/ib_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/bg_circle_btn"
+        android:src="@drawable/ic_home_top_scroll"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ly_food_detail_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+
+    <LinearLayout
+        android:id="@+id/ly_popular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/view_margin_12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/div_food_detail">
+
+        <TextView
+            android:id="@+id/tv_many_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_store_review_order"
+            android:gravity="center"
+            android:text="주문많음"
+            android:visibility="gone"
+            android:layout_marginEnd="@dimen/text_margin_4"
+            android:textColor="@color/blueForBtn"
+            android:textSize="@dimen/text_content_10"
+            android:textStyle="bold" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_many_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_store_review_order"
+            android:gravity="center"
+            android:text="리뷰최고"
+            android:textColor="@color/blueForBtn"
+            android:textSize="@dimen/text_content_10"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_food_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/view_margin_8"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:breakStrategy="high_quality"
+        android:text="음식제목"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_18"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/iv_food_detail_img"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_popular" />
+
+    <TextView
+        android:id="@+id/tv_food_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/view_margin_12"
+        android:text="음식가격"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_food_title" />
+
+    <TextView
+        android:id="@+id/tv_food_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/view_margin_12"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:breakStrategy="high_quality"
+        android:text="음식내용"
+        android:textColor="@color/grayForText"
+        android:textSize="@dimen/text_content_14"
+        app:layout_constraintEnd_toStartOf="@+id/iv_food_detail_img"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_food_price" />
+
+    <ImageView
+        android:id="@+id/iv_food_detail_img"
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/view_margin_12"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="@dimen/view_margin_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ly_popular" />
+
+
+    <ImageButton
+        android:id="@+id/ib_food_cart"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@drawable/bg_circle_btn"
+        android:elevation="2dp"
+        android:padding="3dp"
+        android:scaleType="centerCrop"
+        android:layout_margin="4dp"
+        android:src="@drawable/ic_store_cart"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_food_detail_img"
+        app:layout_constraintEnd_toEndOf="@+id/iv_food_detail_img" />
+
+    <View
+        android:id="@+id/div_food_detail"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/view_margin_12"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/view_margin_12"
+        android:background="@color/grayForDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

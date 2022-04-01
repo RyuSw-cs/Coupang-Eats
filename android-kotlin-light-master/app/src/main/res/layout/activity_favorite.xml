@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:stateListAnimator="@null">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ly_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_cancel"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:background="@color/white"
+            android:src="@drawable/ic_map_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:text="즐겨찾기"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_cancel"
+            app:layout_constraintStart_toEndOf="@id/iv_cancel"
+            app:layout_constraintTop_toTopOf="@+id/iv_cancel" />
+
+        <TextView
+            android:id="@+id/tv_modify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/activity_vertical_margin"
+            android:text="수정"
+            android:textColor="@color/blueForText"
+            android:textSize="@dimen/text_content_16"
+            app:layout_constraintBottom_toBottomOf="@id/tv_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_title" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ly_no_favorite"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:background="@color/grayForNoFavorite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_appbar">
+
+        <ImageView
+            android:id="@+id/iv_no_favorite"
+            android:layout_width="0dp"
+            android:layout_height="240dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="80dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_no_favorite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/bt_go_past_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="@drawable/bg_store_title"
+            android:minWidth="1dp"
+            android:minHeight="1dp"
+            android:paddingStart="12dp"
+            android:paddingTop="6dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="6dp"
+            android:text="쿠팡이츠 맛집 구경가기"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_no_favorite" />
+
+        <LinearLayout
+            android:id="@+id/ly_heart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/iv_no_favorite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/tv_heart_first"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/text_margin_4"
+                android:text="좋아하는 맛집에 "
+                android:textColor="@color/blackForText"
+                android:textSize="@dimen/text_content_16"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/tv_heart"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:paddingBottom="2dp"
+                android:src="@drawable/ic_text_heart" />
+
+            <TextView
+                android:id="@+id/tv_heart_last"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/text_margin_4"
+                android:text="를 눌러주세요."
+                android:textColor="@color/blackForText"
+                android:textSize="@dimen/text_content_16"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_no_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:text="즐겨찾기 맛집이 없습니다."
+            android:textColor="@color/blackForText"
+            android:textSize="@dimen/text_content_16"
+            app:layout_constraintBottom_toTopOf="@id/ly_heart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ly_total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_appbar">
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="center"
+            android:text="총 9개"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_18"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_sort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:drawableEnd="@drawable/ic_sort_pick"
+            android:drawablePadding="@dimen/view_margin_8"
+            android:text="자주 주문한 순"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/div_favorite"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_margin_8"
+        android:layout_marginTop="@dimen/view_margin_12"
+        android:background="@color/grayForDivider"
+        android:stateListAnimator="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ly_total" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_store_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/div_favorite" />
+
+    <LinearLayout
+        android:id="@+id/ly_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blueForBtn"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="@dimen/activity_vertical_margin"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tv_delete_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/bg_circle_btn"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            android:text="0"
+            android:textColor="@color/blueForText"
+            android:textSize="@dimen/text_content_10" />
+
+        <TextView
+            android:id="@+id/tv_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="즐겨찾기 해제"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_content_16"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- 앱바 레이아웃 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ly_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_cancel"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:src="@drawable/ic_cancel"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_appbar_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_appbar_title" />
+
+        <TextView
+            android:id="@+id/tv_appbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:text="만족도 평가 및 리뷰"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_20"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_cancel"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_apply"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_appbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ly_main"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/iv_evaluate"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:src="@drawable/ic_review_write_food_check"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_food_evaluate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_margin_16"
+                android:text="음식 평가"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_title"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/iv_evaluate"
+                app:layout_constraintStart_toEndOf="@id/iv_evaluate"
+                app:layout_constraintTop_toTopOf="@id/iv_evaluate" />
+
+            <TextView
+                android:id="@+id/tv_store_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="가게 이름"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_18"
+                app:layout_constraintStart_toStartOf="@+id/tv_food_evaluate"
+                app:layout_constraintTop_toBottomOf="@id/tv_food_evaluate" />
+
+            <RatingBar
+                android:id="@+id/rb_rating"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/view_margin_8"
+                android:isIndicator="true"
+                android:max="5"
+                android:progressBackgroundTint="@color/grayForRatingBar"
+                android:progressTint="@color/yellowForRatingBar"
+                android:rating="10.0"
+                android:secondaryProgressTint="@color/transparent"
+                android:stateListAnimator="@null"
+                android:stepSize="1.0"
+
+                app:layout_constraintStart_toStartOf="@+id/tv_store_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_store_name" />
+
+            <TextView
+                android:id="@+id/tv_review_content"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                android:background="@drawable/bg_review_add_content"
+                android:padding="@dimen/view_margin_8"
+                android:stateListAnimator="@null"
+                android:text="리뷰내용"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tv_store_name"
+                app:layout_constraintTop_toBottomOf="@+id/rb_rating" />
+
+            <ImageView
+                android:id="@+id/iv_review_img_add"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="@dimen/view_margin_8"
+                android:src="@drawable/ic_review_write_add_img"
+                app:layout_constraintStart_toStartOf="@id/tv_review_content"
+                app:layout_constraintTop_toBottomOf="@id/tv_review_content" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_review_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/iv_review_img_add"
+                app:layout_constraintStart_toEndOf="@id/iv_review_img_add"
+                app:layout_constraintTop_toTopOf="@id/iv_review_img_add" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_menu_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/iv_review_img_add"
+                app:layout_constraintTop_toBottomOf="@id/iv_review_img_add" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ly_food_bad_reason"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_margin_16"
+                app:layout_constraintStart_toStartOf="@id/iv_review_img_add"
+                app:layout_constraintTop_toBottomOf="@id/rcv_menu_list">
+
+                <CheckBox
+                    android:id="@+id/cb_less_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_review_add_check_box_selector"
+                    android:button="@null"
+                    android:text="양이 적음"
+                    android:textSize="@dimen/text_content_14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/cb_too_salty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_margin_8"
+                    android:background="@drawable/bg_review_add_check_box_selector"
+                    android:button="@null"
+                    android:text="너무 짬"
+                    android:textSize="@dimen/text_content_14"
+                    app:layout_constraintBottom_toBottomOf="@id/cb_less_amount"
+                    app:layout_constraintStart_toEndOf="@id/cb_less_amount"
+                    app:layout_constraintTop_toTopOf="@id/cb_less_amount" />
+
+                <CheckBox
+                    android:id="@+id/cb_too_not_salty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_margin_8"
+                    android:background="@drawable/bg_review_add_check_box_selector"
+                    android:button="@null"
+                    android:text="너무 싱거움"
+                    app:layout_constraintBottom_toBottomOf="@id/cb_too_salty"
+                    app:layout_constraintStart_toEndOf="@id/cb_too_salty"
+                    app:layout_constraintTop_toTopOf="@id/cb_too_salty" />
+
+                <CheckBox
+                    android:id="@+id/cb_low_degree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/view_margin_8"
+                    android:background="@drawable/bg_review_add_check_box_selector"
+                    android:button="@null"
+                    android:text="식었음"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cb_less_amount" />
+
+                <CheckBox
+                    android:id="@+id/cb_too_expensive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_margin_8"
+                    android:background="@drawable/bg_review_add_check_box_selector"
+                    android:button="@null"
+                    android:text="너무 비쌈"
+                    app:layout_constraintBottom_toBottomOf="@id/cb_low_degree"
+                    app:layout_constraintStart_toEndOf="@id/cb_low_degree"
+                    app:layout_constraintTop_toTopOf="@id/cb_low_degree" />
+
+                <ImageView
+                    android:id="@+id/iv_other"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginTop="@dimen/view_margin_12"
+                    android:src="@drawable/ic_review_write_other"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cb_low_degree" />
+
+                <TextView
+                    android:id="@+id/tv_other"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_margin_8"
+                    android:text="기타의견"
+                    android:textColor="@color/blueForText"
+                    android:textSize="@dimen/text_content_14"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_other"
+                    app:layout_constraintStart_toEndOf="@id/iv_other"
+                    app:layout_constraintTop_toTopOf="@id/iv_other" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/iv_evaluate_delivery"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:src="@drawable/ic_review_write_food_check"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ly_food_bad_reason" />
+
+            <TextView
+                android:id="@+id/tv_delivery_evaluate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_margin_16"
+                android:text="배달 평가"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_title"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/iv_evaluate_delivery"
+                app:layout_constraintStart_toEndOf="@id/iv_evaluate_delivery"
+                app:layout_constraintTop_toTopOf="@id/iv_evaluate_delivery" />
+
+            <TextView
+                android:id="@+id/tv_delivery_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:text="배달 파트너"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_18"
+                app:layout_constraintStart_toStartOf="@+id/tv_delivery_evaluate"
+                app:layout_constraintTop_toBottomOf="@id/tv_delivery_evaluate" />
+
+            <CheckBox
+                android:id="@+id/cb_delivery_good"
+                android:layout_width="45dp"
+                android:layout_height="35dp"
+                android:background="@drawable/bg_review_good"
+                android:button="@null"
+                android:layout_marginEnd="@dimen/view_margin_8"
+                app:layout_constraintBottom_toBottomOf="@+id/cb_delivery_bad"
+                app:layout_constraintEnd_toStartOf="@+id/cb_delivery_bad"
+                app:layout_constraintTop_toTopOf="@+id/cb_delivery_bad" />
+
+            <CheckBox
+                android:id="@+id/cb_delivery_bad"
+                android:layout_width="45dp"
+                android:layout_height="35dp"
+                android:button="@null"
+                android:background="@drawable/bg_review_bad"
+                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_delivery_name"
+                app:layout_constraintBottom_toBottomOf="@id/tv_delivery_name"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ly_delivery_bad_reason"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_margin_16"
+                app:layout_constraintStart_toStartOf="@id/tv_delivery_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_delivery_name">
+
+                <CheckBox
+                    android:id="@+id/cb_too_late"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_review_add_check_box_selector"
+                    android:button="@null"
+                    android:text="늦게 도착"
+                    android:textSize="@dimen/text_content_14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/cb_destroy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_margin_8"
+                    android:background="@drawable/bg_review_add_check_box_selector"
+                    android:button="@null"
+                    android:text="흘렸음/훼손됨"
+                    android:textSize="@dimen/text_content_14"
+                    app:layout_constraintBottom_toBottomOf="@id/cb_too_late"
+                    app:layout_constraintStart_toEndOf="@id/cb_too_late"
+                    app:layout_constraintTop_toTopOf="@id/cb_too_late" />
+
+                <CheckBox
+                    android:id="@+id/cb_food_degree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_margin_8"
+                    android:background="@drawable/bg_review_add_check_box_selector"
+                    android:button="@null"
+                    android:text="음식 온도"
+                    app:layout_constraintBottom_toBottomOf="@id/cb_destroy"
+                    app:layout_constraintStart_toEndOf="@id/cb_destroy"
+                    app:layout_constraintTop_toTopOf="@id/cb_destroy" />
+
+                <CheckBox
+                    android:id="@+id/cb_no_request"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/view_margin_8"
+                    android:background="@drawable/bg_review_add_check_box_selector"
+                    android:button="@null"
+                    android:text="배달 요청사항 불이행"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cb_food_degree" />
+
+                <CheckBox
+                    android:id="@+id/cb_no_kind"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_margin_8"
+                    android:background="@drawable/bg_review_add_check_box_selector"
+                    android:button="@null"
+                    android:text="불친절"
+                    app:layout_constraintBottom_toBottomOf="@id/cb_no_request"
+                    app:layout_constraintStart_toEndOf="@id/cb_no_request"
+                    app:layout_constraintTop_toTopOf="@id/cb_no_request" />
+
+                <CheckBox
+                    android:id="@+id/cb_other_food"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/view_margin_8"
+                    android:background="@drawable/bg_review_add_check_box_selector"
+                    android:button="@null"
+                    android:text="다른 메뉴 배달"
+                    app:layout_constraintStart_toStartOf="@id/cb_no_request"
+                    app:layout_constraintTop_toBottomOf="@id/cb_no_request" />
+
+                <CheckBox
+                    android:id="@+id/cb_no_get"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_margin_8"
+                    android:background="@drawable/bg_review_add_check_box_selector"
+                    android:button="@null"
+                    android:text="상품을 받지 못함"
+                    app:layout_constraintBottom_toBottomOf="@id/cb_other_food"
+                    app:layout_constraintStart_toEndOf="@id/cb_other_food"
+                    app:layout_constraintTop_toTopOf="@id/cb_other_food" />
+
+                <CheckBox
+                    android:id="@+id/cb_no_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/view_margin_8"
+                    android:background="@drawable/bg_review_add_check_box_selector"
+                    android:button="@null"
+                    android:text="길게 우회되어 배달됨"
+                    app:layout_constraintStart_toStartOf="@id/cb_other_food"
+                    app:layout_constraintTop_toBottomOf="@id/cb_other_food" />
+
+                <ImageView
+                    android:id="@+id/iv_other_delivery"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginTop="@dimen/view_margin_12"
+                    android:src="@drawable/ic_review_write_other"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cb_no_location" />
+
+                <TextView
+                    android:id="@+id/tv_other_delivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_margin_8"
+                    android:text="기타의견"
+                    android:textColor="@color/blueForText"
+                    android:textSize="@dimen/text_content_14"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_other_delivery"
+                    app:layout_constraintStart_toEndOf="@id/iv_other_delivery"
+                    app:layout_constraintTop_toTopOf="@id/iv_other_delivery" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/tv_apply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blueForBtn"
+        android:gravity="center"
+        android:padding="@dimen/view_margin_12"
+        android:text="등록하기"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_content_14"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

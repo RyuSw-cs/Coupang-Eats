@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ly_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_cancel"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:layout_marginEnd="@dimen/activity_vertical_margin"
+            android:background="@color/white"
+            android:src="@drawable/ic_cancel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:text="카트"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_title"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_cancel"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ly_no_cart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/ic_no_cart"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="@dimen/view_margin_12"
+            android:src="@drawable/ic_no_cart_data"
+            app:layout_constraintBottom_toTopOf="@id/tv_empty_cart"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_empty_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:text="장바구니가 비어있습니다."
+            android:textSize="@dimen/text_content_14"
+            android:textColor="@color/grayForDivider"
+            app:layout_constraintBottom_toTopOf="@id/bt_go_home"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <Button
+            android:id="@+id/bt_go_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_store_title"
+            android:minWidth="1dp"
+            android:minHeight="1dp"
+            android:paddingStart="12dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="4dp"
+            android:stateListAnimator="@null"
+            android:text="쿠팡이츠 맛집 구경가기"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_14"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bt_order"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_appbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ly_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/ly_order_tab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_margin_12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tabIndicatorHeight="3dp"
+                app:tabSelectedTextColor="@color/blueForText"
+                app:tabTextAppearance="@style/tab_delivery_text"
+                app:tabTextColor="@color/black" />
+
+            <View
+                android:id="@+id/div_tab"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grayForDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ly_order_tab" />
+
+            <FrameLayout
+                android:id="@+id/ly_address_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/div_tab" />
+
+            <View
+                android:id="@+id/div_frame_layout"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/grayForDivider"
+                android:elevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ly_address_result" />
+
+            <TextView
+                android:id="@+id/tv_order_place_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_vertical_margin"
+                android:paddingTop="@dimen/view_margin_12"
+                android:paddingBottom="@dimen/view_margin_12"
+                android:text="가게 이름"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_18"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/div_frame_layout" />
+
+            <ImageView
+                android:id="@+id/iv_fast_delivery"
+                android:layout_width="90dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="2dp"
+                android:src="@drawable/ic_store_fast_delivery"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_order_place_name"
+                app:layout_constraintStart_toEndOf="@+id/tv_order_place_name"
+                app:layout_constraintTop_toTopOf="@+id/tv_order_place_name" />
+
+            <View
+                android:id="@+id/div_place_name"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/grayForDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_order_place_name" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_menu_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/view_margin_8"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/div_place_name" />
+
+            <Button
+                android:id="@+id/bt_more_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:gravity="center"
+                android:padding="18dp"
+                android:stateListAnimator="@null"
+                android:text="+ 메뉴추가"
+                android:textColor="@color/blueForBtn"
+                android:textSize="@dimen/text_content_16"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rcv_menu_list" />
+
+            <View
+                android:id="@+id/div_menu"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/grayForPictureBackground"
+                android:stateListAnimator="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bt_more_menu" />
+
+            <LinearLayout
+                android:id="@+id/ly_order_together"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:background="@color/white"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/div_menu">
+
+                <TextView
+                    android:id="@+id/tv_order_together"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/text_margin_4"
+                    android:text="함께 주문하면 좋을 메뉴"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_content_16"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcv_order_together"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/div_order_together"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/grayForPictureBackground"
+                android:elevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ly_order_together" />
+
+            <TextView
+                android:id="@+id/tv_coupon_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="할인쿠폰"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/div_order_together" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ly_coupon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/view_margin_8"
+                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                android:background="@drawable/bg_coupon_ly"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_coupon_title">
+
+                <TextView
+                    android:id="@+id/tv_possible_coupon_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/view_margin_16"
+                    android:text="사용가능 쿠폰"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_content_14"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_coupon_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="0장"
+                    android:textColor="@color/blueForText"
+                    android:textSize="@dimen/text_content_14"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_possible_coupon_title"
+                    app:layout_constraintStart_toEndOf="@id/tv_possible_coupon_title"
+                    app:layout_constraintTop_toTopOf="@id/tv_possible_coupon_title" />
+
+                <TextView
+                    android:id="@+id/tv_coupon_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="▶"
+                    android:textColor="@color/blueForText"
+                    android:textSize="@dimen/text_content_10"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_coupon_count"
+                    app:layout_constraintStart_toEndOf="@id/tv_coupon_count"
+                    app:layout_constraintTop_toTopOf="@id/tv_coupon_count" />
+
+                <TextView
+                    android:id="@+id/bt_coupon_content"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/view_margin_12"
+                    android:background="@drawable/bg_join_border_line"
+                    android:clickable="true"
+                    android:elevation="0dp"
+                    android:focusable="true"
+                    android:gravity="start"
+                    android:minWidth="1dp"
+                    android:minHeight="1dp"
+                    android:padding="@dimen/view_margin_12"
+                    android:text="쿠폰을 선택해주세요"
+                    android:textColor="@color/grayForDivider"
+                    android:textSize="@dimen/text_content_14"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/bt_coupon_select"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_coupon_count" />
+
+                <ImageView
+                    android:id="@+id/iv_coupon_available"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/text_margin_4"
+                    android:src="@drawable/ic_area_start"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_available_coupon_exits"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_available_coupon_exits"
+                    app:layout_constraintTop_toTopOf="@id/tv_available_coupon_exits" />
+
+                <TextView
+                    android:id="@+id/tv_available_coupon_exits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/view_margin_12"
+                    android:text="테스트"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_content_14"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_possible_coupon_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tv_possible_coupon_title" />
+
+                <Button
+                    android:id="@+id/bt_coupon_select"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="@dimen/view_margin_8"
+                    android:background="@drawable/bg_coupon_select"
+                    android:elevation="0dp"
+                    android:gravity="center"
+                    android:minWidth="1dp"
+                    android:minHeight="1dp"
+                    android:paddingStart="24dp"
+                    android:paddingEnd="24dp"
+                    android:text="선택"
+                    android:textColor="@color/blueForText"
+                    android:textSize="@dimen/text_content_14"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/bt_coupon_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/bt_coupon_content" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_order_price_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="주문금액"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ly_coupon" />
+
+            <TextView
+                android:id="@+id/bt_use_all_cash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/view_margin_8"
+                android:background="@drawable/bg_coupang_cash"
+                android:clickable="true"
+                android:elevation="0dp"
+                android:focusable="true"
+                android:minWidth="1dp"
+                android:minHeight="1dp"
+                android:paddingStart="@dimen/view_margin_6"
+                android:paddingTop="4dp"
+                android:paddingEnd="@dimen/view_margin_6"
+                android:paddingBottom="4dp"
+                android:text="전액사용"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_12"
+                app:layout_constraintBottom_toBottomOf="@id/tv_coupang_cash_title"
+                app:layout_constraintStart_toEndOf="@id/tv_coupang_cash_title"
+                app:layout_constraintTop_toTopOf="@id/tv_coupang_cash_title" />
+
+            <TextView
+                android:id="@+id/tv_coupang_cash_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="쿠팡캐시"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_order_price_title" />
+
+            <TextView
+                android:id="@+id/tv_order_price_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="10,000원"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ly_coupon" />
+
+            <TextView
+                android:id="@+id/tv_coupang_cash_won"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                android:text="원"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_14"
+                app:layout_constraintBottom_toBottomOf="@id/ly_coupang_cash"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/ly_coupang_cash" />
+
+            <TextView
+                android:id="@+id/tv_minus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/text_margin_4"
+                android:text="-"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_14"
+                app:layout_constraintBottom_toBottomOf="@id/ly_coupang_cash"
+                app:layout_constraintEnd_toStartOf="@id/ly_coupang_cash"
+                app:layout_constraintTop_toTopOf="@id/ly_coupang_cash" />
+
+            <LinearLayout
+                android:id="@+id/ly_coupang_cash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_margin_12"
+                android:background="@drawable/bg_join_border_line"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toStartOf="@id/tv_coupang_cash_won"
+                app:layout_constraintTop_toBottomOf="@id/tv_order_price_content">
+
+                <EditText
+                    android:id="@+id/et_coupang_cash"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="end"
+                    android:padding="@dimen/view_margin_8"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_content_14" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_coupang_cash_exist_cost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_margin_8"
+                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                android:text="잔여:0원"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ly_coupang_cash" />
+
+            <View
+                android:id="@+id/div_coupang_cash"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@color/grayForDivider"
+                android:elevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_coupang_cash_exist_cost" />
+
+            <TextView
+                android:id="@+id/tv_total_price_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="총 결제금액"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_18"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/div_coupang_cash" />
+
+            <TextView
+                android:id="@+id/tv_total_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                android:text="0원"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_18"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tv_total_price_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_total_price_title" />
+
+            <View
+                android:id="@+id/div_total_price"
+                android:layout_width="match_parent"
+                android:layout_height="16dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@color/grayForPictureBackground"
+                android:elevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_total_price_title" />
+
+
+            <TextView
+                android:id="@+id/tv_request_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="요청사항"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/div_total_price" />
+
+            <ImageView
+                android:id="@+id/iv_more_request"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                android:src="@drawable/ic_area_end"
+                app:layout_constraintBottom_toBottomOf="@id/tv_request_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_request_title" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ly_more_request"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/view_margin_12"
+                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_request_title">
+
+                <TextView
+                    android:id="@+id/tv_request_for_ceo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="가게 사장님에게"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_content_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/bt_more_request_for_ceo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/view_margin_8"
+                    android:background="@drawable/bg_coupang_cash"
+                    android:elevation="0dp"
+                    android:gravity="start"
+                    android:minWidth="1dp"
+                    android:minHeight="1dp"
+                    android:paddingStart="@dimen/view_margin_12"
+                    android:paddingTop="@dimen/view_margin_16"
+                    android:paddingBottom="@dimen/view_margin_16"
+                    android:text="예) 견과류는 빼주세요."
+                    android:textColor="@color/grayForText"
+                    android:textSize="@dimen/text_content_14"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_request_for_ceo" />
+
+                <CheckBox
+                    android:id="@+id/cb_recycle"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="@dimen/view_margin_12"
+                    android:background="@drawable/bg_menu_check"
+                    android:button="@null"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bt_more_request_for_ceo" />
+
+                <TextView
+                    android:id="@+id/tv_recycle_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_margin_8"
+                    android:text="일회용 수저, 포크 받기"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_content_14"
+                    app:layout_constraintBottom_toBottomOf="@id/cb_recycle"
+                    app:layout_constraintStart_toEndOf="@id/cb_recycle"
+                    app:layout_constraintTop_toTopOf="@id/cb_recycle" />
+
+                <TextView
+                    android:id="@+id/tv_recycle_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/view_margin_8"
+                    android:layout_marginTop="@dimen/text_margin_4"
+                    android:text="일회용품 사용을 줄이기 위해, 선택 시에만 제공됩니다."
+                    android:textColor="@color/grayForText"
+                    android:textSize="@dimen/text_content_14"
+                    app:layout_constraintStart_toEndOf="@id/cb_recycle"
+                    app:layout_constraintTop_toBottomOf="@id/cb_recycle" />
+
+                <TextView
+                    android:id="@+id/tv_request_for_delivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="배달 기사님에게"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_content_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_recycle_content" />
+
+                <LinearLayout
+                    android:id="@+id/ly_delivery_request"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/view_margin_8"
+                    android:background="@drawable/bg_coupang_cash"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_request_for_delivery">
+
+                    <TextView
+                        android:id="@+id/bt_more_request_for_delivery"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="20"
+                        android:gravity="start"
+                        android:minWidth="1dp"
+                        android:minHeight="1dp"
+                        android:paddingStart="@dimen/view_margin_12"
+                        android:paddingTop="@dimen/view_margin_16"
+                        android:paddingBottom="@dimen/view_margin_16"
+                        android:text="초인종 누르고 문 앞"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_content_14" />
+
+
+                    <ImageView
+                        android:id="@+id/iv_more_request_delivery"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="@dimen/activity_vertical_margin"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_area_end" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/div_request"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@color/grayForPictureBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ly_more_request" />
+
+            <TextView
+                android:id="@+id/tv_payment_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="결제수단"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/div_request" />
+
+            <TextView
+                android:id="@+id/tv_payment_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/view_margin_10"
+                android:text="국민은행 *****8379"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_payment_title" />
+
+            <ImageView
+                android:id="@+id/iv_payment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                android:src="@drawable/ic_area_end"
+                app:layout_constraintBottom_toBottomOf="@id/div_payment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/div_request" />
+
+            <View
+                android:id="@+id/div_payment"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@color/grayForPictureBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_payment_content" />
+
+            <TextView
+                android:id="@+id/tv_coupang_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="쿠페이머니로 결제 시"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/div_payment" />
+
+            <TextView
+                android:id="@+id/tv_coupang_cash_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/text_margin_4"
+                android:background="@drawable/bg_coupang_money"
+                android:gravity="center"
+                android:paddingStart="8dp"
+                android:paddingTop="3dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="3dp"
+                android:text="최대 48원 쿠팡캐시 적립"
+                android:textColor="@color/blackForText"
+                android:textSize="@dimen/text_content_12"
+                app:drawableStartCompat="@drawable/ic_order_coupang_money"
+                app:layout_constraintBottom_toBottomOf="@id/tv_coupang_pay"
+                app:layout_constraintStart_toEndOf="@id/tv_coupang_pay"
+                app:layout_constraintTop_toTopOf="@id/tv_coupang_pay" />
+
+            <View
+                android:id="@+id/div_agree"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@color/grayForPictureBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_coupang_cash_save" />
+
+            <TextView
+                android:id="@+id/tv_agree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="구매조건 확인 및 결제대행 서비스 동의"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/div_agree" />
+
+            <TextView
+                android:id="@+id/tv_agree_more_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                android:text="보기"
+                android:textColor="@color/grayForText"
+                android:textSize="@dimen/text_content_14"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_agree"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_agree" />
+
+            <TextView
+                android:id="@+id/tv_last"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/view_margin_16"
+                android:background="@color/grayForPictureBackground"
+                android:padding="@dimen/activity_vertical_margin"
+                android:text="쿠팡은 통신판매중개자로서 통신판매의 당사자가 아니며, 판매자가 등록한 상품 정보, 상품의 품질 및 거래에 대해서 일체의 책임을 지지 않습니다.회원은 주문 내용을 확인하였고, 결제에 동의합니다."
+                android:textColor="@color/grayForText"
+                android:textSize="@dimen/text_content_12"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_agree" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blueForBtn"
+        android:padding="@dimen/button_biggest_padding"
+        android:text="10,000원 이상 주문 가능"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_content_18"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

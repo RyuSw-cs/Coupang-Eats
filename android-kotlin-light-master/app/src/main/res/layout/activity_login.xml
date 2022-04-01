@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageButton
+        android:id="@+id/iv_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:background="@color/white"
+        android:src="@drawable/ic_cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/image_normal_padding"
+        android:src="@drawable/bg_coupang_big_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_cancel" />
+
+    <LinearLayout
+        android:id="@+id/ly_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_login_et"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_logo">
+
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="4"
+            android:gravity="start"
+            android:padding="@dimen/edit_text_normal_padding"
+            android:text="@string/login_email"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_14" />
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="12"
+            android:background="@null"
+            android:gravity="start"
+            android:hint="@string/login_email_hint"
+            android:padding="@dimen/edit_text_normal_padding"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grayForText"
+            android:textSize="@dimen/text_content_14" />
+
+        <ImageView
+            android:id="@+id/iv_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:padding="@dimen/edit_text_normal_padding"
+            android:src="@drawable/ic_login_id_cancel"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_pw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/view_margin_8"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_login_et"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_email">
+
+        <TextView
+            android:id="@+id/tv_pw"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="4"
+            android:gravity="start"
+            android:padding="@dimen/edit_text_normal_padding"
+            android:text="@string/login_password"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_14" />
+
+        <EditText
+            android:id="@+id/et_pw"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="12"
+            android:background="@null"
+            android:gravity="start"
+            android:hint="@string/login_pw_hint"
+            android:inputType="textPassword"
+            android:padding="@dimen/edit_text_normal_padding"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grayForText"
+            android:textSize="@dimen/text_content_14" />
+
+        <ImageView
+            android:id="@+id/iv_pw"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:padding="@dimen/edit_text_normal_padding"
+            android:src="@drawable/ic_login_non_pw" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_app_login"
+        android:gravity="center"
+        android:text="@string/login_login"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_content_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_pw" />
+
+    <LinearLayout
+        android:id="@+id/ly_more_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/login_big_margin"
+        android:layout_marginTop="@dimen/bottom_sheet_top_margin"
+        android:layout_marginEnd="@dimen/login_big_margin"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_login">
+
+        <TextView
+            android:id="@+id/tv_find_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/view_margin_8"
+            android:text="@string/login_find_id"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_14" />
+
+        <TextView
+            android:id="@+id/tv_find_pw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_login_border_line"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@string/login_find_pw"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_14" />
+
+        <TextView
+            android:id="@+id/tv_join"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/view_margin_8"
+            android:text="@string/login_join"
+            android:textColor="@color/blueForText"
+            android:textSize="@dimen/text_content_14" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_login_fail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grayForBottomSheet"
+        android:gravity="center"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:text="@string/login_fail"
+        android:textColor="@color/white"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

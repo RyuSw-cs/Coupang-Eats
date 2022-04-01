@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_food_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:text="음식 내용"
+        android:textColor="@color/black"
+        android:textSize="@dimen/view_margin_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_food_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/text_margin_4"
+        android:text="음식 옵션"
+        android:visibility="gone"
+        android:textColor="@color/grayForText"
+        android:textSize="@dimen/text_content_14"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        app:layout_constraintEnd_toStartOf="@+id/ly_spinner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_food_title" />
+
+    <TextView
+        android:id="@+id/tv_food_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/view_margin_16"
+        android:layout_marginBottom="24dp"
+        android:text="20,000원"
+        android:textColor="@color/black"
+        android:textSize="@dimen/view_margin_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_food_content" />
+
+    <ImageView
+        android:id="@+id/iv_cancel"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:src="@drawable/ic_cancel"
+        android:layout_marginTop="@dimen/view_margin_12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/ly_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/text_content_18"
+        android:background="@drawable/bg_coupang_cash"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:paddingStart="@dimen/view_margin_8"
+            android:paddingTop="@dimen/view_margin_6"
+            android:paddingEnd="40dp"
+            android:paddingBottom="@dimen/view_margin_6"
+            android:text="1"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_12" />
+
+        <TextView
+            android:id="@+id/iv_more_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/view_margin_12"
+            android:text="▼"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_10" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/div_item"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grayForDivider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

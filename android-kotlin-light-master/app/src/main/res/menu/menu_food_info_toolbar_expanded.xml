@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:icon="@drawable/ic_food_info_share_flip"
+        android:enabled="true"
+        android:title="공유"
+        android:id="@+id/it_toolbar_share"
+        app:showAsAction="always"/>
+
+    <item
+        android:icon="@drawable/ic_food_info_non_like_flip"
+        android:enabled="true"
+        android:id="@+id/it_toolbar_like"
+        android:title="즐겨찾기"
+        app:showAsAction="always"/>
+
+</menu>

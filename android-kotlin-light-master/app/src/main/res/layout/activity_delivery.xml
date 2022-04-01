@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sothree.slidinguppanel.SlidingUpPanelLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="bottom"
+    app:umanoDragView="@id/ly_content"
+    app:umanoFadeColor="@color/transparent"
+    app:umanoOverlay="false"
+    app:umanoPanelHeight="100dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ly_map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/ly_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_cancel"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center|start"
+                android:layout_marginStart="@dimen/activity_vertical_margin"
+                android:src="@drawable/ic_store_more_review" />
+
+        </LinearLayout>
+
+        <com.naver.maps.map.MapView
+            android:id="@+id/m_map"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ly_cancel" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ly_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_check_order"
+            android:layout_width="@dimen/view_margin_14"
+            android:layout_height="@dimen/view_margin_14"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="@dimen/activity_vertical_margin"
+            android:src="@drawable/ic_order_state"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_check_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:text="매장에서 주문을 확인하고 있습니다."
+            android:textColor="@color/blueForBtn"
+            android:textSize="@dimen/text_content_16"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/iv_check_order"
+            app:layout_constraintStart_toEndOf="@id/iv_check_order"
+            app:layout_constraintTop_toTopOf="@id/iv_check_order" />
+
+        <Button
+            android:id="@+id/bt_order_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/bg_map_btn"
+            android:minWidth="1dp"
+            android:minHeight="1dp"
+            android:paddingStart="@dimen/view_margin_12"
+            android:paddingTop="@dimen/view_margin_6"
+            android:paddingEnd="@dimen/view_margin_12"
+            android:paddingBottom="@dimen/view_margin_6"
+            android:text="주문 취소"
+            android:textColor="@color/grayForBorderLine"
+            android:textSize="@dimen/text_content_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_check_order" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:text="매장이 조리를 시작하면 취소할 수 없습니다."
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bt_order_cancel" />
+
+        <View
+            android:id="@+id/div_order"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="@dimen/activity_vertical_margin"
+            android:background="@color/grayForDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_content" />
+
+        <TextView
+            android:id="@+id/tv_order_address_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:text="배달 주소"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_title"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/div_order" />
+
+        <TextView
+            android:id="@+id/tv_order_address_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/view_margin_12"
+            android:text="배달주소"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_order_address_title" />
+
+        <TextView
+            android:id="@+id/tv_order_address_detail_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:text="상세주소"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_order_address_content" />
+
+        <View
+            android:id="@+id/div_address"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:background="@color/grayForDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_order_address_detail_content" />
+
+        <TextView
+            android:id="@+id/tv_order_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:text="2VVCR0 주문"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_title"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/div_address" />
+
+        <TextView
+            android:id="@+id/tv_order_place_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:layout_marginTop="@dimen/view_margin_16"
+            android:text="음식점 이름"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_order_num" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_order_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_order_place_name" />
+
+        <TextView
+            android:id="@+id/tv_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="60dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_18"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rcv_order_list" />
+
+        <TextView
+            android:id="@+id/tv_won"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="원"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_12"
+            app:layout_constraintBottom_toBottomOf="@id/tv_total_price"
+            app:layout_constraintStart_toEndOf="@id/tv_total_price" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>

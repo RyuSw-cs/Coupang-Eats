@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:text="@string/location_tv_tip"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_16"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_road_address_div"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:text="@string/location_tv_division"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <TextView
+        android:id="@+id/tv_road_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="@string/location_tv_road_address_title"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_16"
+        app:layout_constraintStart_toEndOf="@id/tv_road_address_div"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <TextView
+        android:id="@+id/tv_road_address_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_content_16"
+        android:textColor="@color/grayForText"
+        android:text="@string/location_tv_road_address_example"
+        app:layout_constraintStart_toStartOf="@+id/tv_road_address"
+        app:layout_constraintTop_toBottomOf="@id/tv_road_address" />
+
+    <TextView
+        android:id="@+id/tv_road_old_div"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/view_margin_8"
+        android:text="@string/location_tv_division"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_road_address_content" />
+
+    <TextView
+        android:id="@+id/tv_old_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/view_margin_8"
+        android:text="@string/location_tv_small_address_title"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_16"
+        app:layout_constraintStart_toEndOf="@+id/tv_road_old_div"
+        app:layout_constraintTop_toBottomOf="@id/tv_road_address_content" />
+
+    <TextView
+        android:id="@+id/tv_old_address_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grayForText"
+        android:textSize="@dimen/text_content_16"
+        android:text="@string/location_tv_small_address_example"
+        app:layout_constraintStart_toStartOf="@+id/tv_old_address"
+        app:layout_constraintTop_toBottomOf="@id/tv_old_address" />
+
+    <TextView
+        android:id="@+id/tv_road_building_div"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/view_margin_8"
+        android:text="@string/location_tv_division"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_old_address_content" />
+
+    <TextView
+        android:id="@+id/tv_build_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/view_margin_8"
+        android:text="@string/location_tv_building_title"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_16"
+        app:layout_constraintStart_toEndOf="@+id/tv_road_building_div"
+        app:layout_constraintTop_toBottomOf="@id/tv_old_address_content" />
+
+    <TextView
+        android:id="@+id/tv_build_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_content_16"
+        android:textColor="@color/grayForText"
+        android:text="@string/location_tv_building_example"
+        app:layout_constraintStart_toStartOf="@+id/tv_build_address"
+        app:layout_constraintTop_toBottomOf="@id/tv_build_address" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

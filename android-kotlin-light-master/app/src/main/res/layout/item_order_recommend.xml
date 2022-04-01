@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="80dp"
+    android:layout_marginEnd="@dimen/view_margin_12"
+    android:background="@drawable/bg_coupang_cash"
+    android:padding="@dimen/view_margin_6">
+
+    <ImageView
+        android:id="@+id/iv_food_img"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/ic_home_korean_food"
+        app:layout_constraintBottom_toBottomOf="@+id/ly_food_info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ly_food_info" />
+
+    <LinearLayout
+        android:id="@+id/ly_food_info"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/view_margin_6"
+        android:background="@color/white"
+        android:gravity="start|center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/iv_food_img"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_food_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxEms="4"
+            android:maxLines="2"
+            android:text="음식메뉴123123213"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_14" />
+
+        <TextView
+            android:id="@+id/tv_food_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="음식메뉴"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_14" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_food_add"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/view_margin_8"
+        android:src="@drawable/ic_order_recommend_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ly_food_info"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

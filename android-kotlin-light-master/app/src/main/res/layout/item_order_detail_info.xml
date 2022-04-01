@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/bg_coupang_cash">
+
+    <TextView
+        android:id="@+id/tv_store_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:ellipsize="end"
+        android:ems="11"
+        android:maxLines="1"
+        android:text="가게 이름"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_title"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_order_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/text_margin_4"
+        android:text="2022-03-22 오후 02:55"
+        android:textColor="@color/grayForText"
+        android:textSize="@dimen/text_content_14"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_store_title" />
+
+    <ImageView
+        android:id="@+id/iv_food_img"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:src="@drawable/ic_home_korean_food"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/ly_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/view_margin_12"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_order_time">
+
+        <ImageView
+            android:id="@+id/iv_status"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/view_margin_8"
+            android:src="@drawable/ic_order_state"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_order_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="배달 완료"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_16"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    <RatingBar
+        android:id="@+id/rb_review"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="4dp"
+        android:progressBackgroundTint="@color/grayForRatingBar"
+        android:progressTint="@color/yellowForRatingBar"
+        android:secondaryProgressTint="@color/transparent"
+        android:stateListAnimator="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ly_status" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_order_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rb_review" />
+
+    <TextView
+        android:id="@+id/tv_order_price_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/view_margin_12"
+        android:text="합계: "
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rcv_order_list" />
+
+    <TextView
+        android:id="@+id/tv_total_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="22,000원"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_16"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tv_order_price_title"
+        app:layout_constraintStart_toEndOf="@id/tv_order_price_title"
+        app:layout_constraintTop_toTopOf="@id/tv_order_price_title" />
+
+    <Button
+        android:id="@+id/bt_re_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_order_round_btn"
+        android:minHeight="1dp"
+        android:padding="@dimen/view_margin_12"
+        android:stateListAnimator="@null"
+        android:text="재주문하기"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_content_14"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_total_price" />
+
+    <Button
+        android:id="@+id/bt_review"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/view_margin_8"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_email_login"
+        android:minHeight="1dp"
+        android:padding="@dimen/view_margin_12"
+        android:stateListAnimator="@null"
+        android:text="리뷰 작성 하기"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_14"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_re_order" />
+
+    <TextView
+        android:id="@+id/tv_receipt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_order_list_receipt"
+        android:gravity="center"
+        android:padding="6dp"
+        android:text="영수증 보기"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_review" />
+</androidx.constraintlayout.widget.ConstraintLayout>

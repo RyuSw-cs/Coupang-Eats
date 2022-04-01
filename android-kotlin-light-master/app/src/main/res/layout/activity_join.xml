@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ly_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/iv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:background="@color/white"
+            android:src="@drawable/ic_cancel"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:text="@string/login_join"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_title"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_cancel"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_appbar"
+        app:layout_constraintVertical_bias="1.0">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_vertical_margin"
+                android:layout_marginTop="36dp"
+                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                android:src="@drawable/bg_coupang_big_logo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_user_info_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="@string/join_content"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_14"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_logo" />
+
+            <LinearLayout
+                android:id="@+id/ly_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:background="@drawable/bg_login_et"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_user_info_content">
+
+                <ImageView
+                    android:id="@+id/tv_email"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_join_border_line"
+                    android:padding="@dimen/edit_text_normal_padding"
+                    android:src="@drawable/ic_join_email" />
+
+                <EditText
+                    android:id="@+id/et_email"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="8"
+                    android:background="@null"
+                    android:gravity="start"
+                    android:hint="@string/join_id_hint"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/edit_text_normal_padding"
+                    android:paddingTop="@dimen/view_margin_15"
+                    android:paddingBottom="@dimen/view_margin_15"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grayForText"
+                    android:textSize="@dimen/text_content_14"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ly_pw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/view_margin_8"
+                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                android:background="@drawable/bg_login_et"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ly_email">
+
+                <ImageView
+                    android:id="@+id/tv_pw"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_join_border_line"
+                    android:gravity="center"
+                    android:padding="@dimen/edit_text_normal_padding"
+                    android:src="@drawable/ic_join_pw" />
+
+                <EditText
+                    android:id="@+id/et_pw"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="7"
+                    android:background="@null"
+                    android:gravity="start"
+                    android:hint="@string/join_pw_hint"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/edit_text_normal_padding"
+                    android:paddingTop="@dimen/view_margin_15"
+                    android:paddingBottom="@dimen/view_margin_15"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grayForText"
+                    android:textSize="@dimen/text_content_14"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/iv_pw_visibility"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_join_pw_invisible" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ly_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/view_margin_8"
+                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                android:background="@drawable/bg_login_et"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ly_pw">
+
+                <ImageView
+                    android:id="@+id/tv_name"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_join_border_line"
+                    android:gravity="center"
+                    android:padding="@dimen/edit_text_normal_padding"
+                    android:src="@drawable/ic_join_name" />
+
+                <EditText
+                    android:id="@+id/et_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="8"
+                    android:background="@null"
+                    android:gravity="start"
+                    android:hint="@string/join_name_hint"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/edit_text_normal_padding"
+                    android:paddingTop="@dimen/view_margin_15"
+                    android:paddingBottom="@dimen/view_margin_15"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grayForText"
+                    android:textSize="@dimen/text_content_14"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ly_phone_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/view_margin_8"
+                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                android:background="@drawable/bg_login_et"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ly_name">
+
+                <ImageView
+                    android:id="@+id/tv_phone_number"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_join_border_line"
+                    android:gravity="center"
+                    android:padding="@dimen/edit_text_normal_padding"
+                    android:src="@drawable/ic_join_phone_num" />
+
+                <EditText
+                    android:id="@+id/et_phone_number"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="8"
+                    android:background="@null"
+                    android:gravity="start"
+                    android:hint="@string/join_phone_num_hint"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/edit_text_normal_padding"
+                    android:paddingTop="@dimen/view_margin_15"
+                    android:paddingBottom="@dimen/view_margin_15"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grayForText"
+                    android:textSize="@dimen/text_content_14"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/div_join"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:background="@color/grayForDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ly_phone_number" />
+
+            <TextView
+                android:id="@+id/tv_agree_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="@string/join_agree_title"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_14"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/div_join" />
+
+            <CheckBox
+                android:id="@+id/cb_all_agree"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:background="@drawable/bg_check_box"
+                android:button="@null"
+                android:checked="false"
+                android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_agree_title" />
+
+            <LinearLayout
+                android:id="@+id/ly_all_agree_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cb_all_agree"
+                app:layout_constraintTop_toTopOf="@id/cb_all_agree">
+
+                <TextView
+                    android:id="@+id/tv_all_agree_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/text_margin_8"
+                    android:text="@string/join_agree_all"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_content_16"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_all_agree_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="@dimen/view_margin_8"
+                    android:layout_marginTop="@dimen/view_margin_8"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@string/join_agree_all_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_content_12" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tv_must_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/view_margin_8"
+                android:layout_marginBottom="@dimen/view_margin_8"
+                android:text="@string/join_must_check"
+                android:textColor="@color/redForWarningText"
+                android:textSize="@dimen/text_content_12"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ly_all_agree_content" />
+
+            <LinearLayout
+                android:id="@+id/ly_agree_check_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_vertical_margin"
+                android:layout_marginTop="@dimen/view_margin_14"
+                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                android:background="@drawable/bg_join_border_line"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_must_check">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_vertical_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:layout_marginEnd="@dimen/view_margin_10">
+
+                    <CheckBox
+                        android:id="@+id/cb_agree_age"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_check_box"
+                        android:button="@null"
+                        android:checked="false" />
+
+                    <TextView
+                        android:id="@+id/tv_agree_old"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/text_margin_8"
+                        android:layout_weight="24"
+                        android:text="@string/join_agree_old"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_content_14" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_vertical_margin"
+                    android:layout_marginTop="@dimen/view_margin_12"
+                    android:layout_marginEnd="@dimen/activity_vertical_margin">
+
+                    <CheckBox
+                        android:id="@+id/cb_agree_use"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_check_box"
+                        android:button="@null"
+                        android:checked="false" />
+
+                    <TextView
+                        android:id="@+id/tv_agree_use"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/text_margin_8"
+                        android:layout_weight="23"
+                        android:text="@string/join_agree_use"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_content_14" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_agree_more_info" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_vertical_margin"
+                    android:layout_marginTop="@dimen/view_margin_12"
+                    android:layout_marginEnd="@dimen/activity_vertical_margin">
+
+                    <CheckBox
+                        android:id="@+id/cb_agree_1"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_check_box"
+                        android:button="@null"
+                        android:checked="false" />
+
+                    <TextView
+                        android:id="@+id/tv_agree_1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/text_margin_8"
+                        android:layout_weight="23"
+                        android:text="@string/join_agree_content_1"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_content_14" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_agree_more_info" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_vertical_margin"
+                    android:layout_marginTop="@dimen/view_margin_12"
+                    android:layout_marginEnd="@dimen/activity_vertical_margin">
+
+                    <CheckBox
+                        android:id="@+id/cb_agree_2"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_check_box"
+                        android:button="@null"
+                        android:checked="false" />
+
+                    <TextView
+                        android:id="@+id/tv_agree_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/text_margin_8"
+                        android:layout_weight="23"
+                        android:text="@string/join_agree_content_2"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_content_14" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_agree_more_info" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_vertical_margin"
+                    android:layout_marginTop="@dimen/view_margin_12"
+                    android:layout_marginEnd="@dimen/activity_vertical_margin">
+
+                    <CheckBox
+                        android:id="@+id/cb_agree_3"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_check_box"
+                        android:button="@null"
+                        android:checked="false" />
+
+                    <TextView
+                        android:id="@+id/tv_agree_3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/text_margin_8"
+                        android:layout_weight="23"
+                        android:text="@string/join_agree_content_3"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_content_14" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_agree_more_info" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_vertical_margin"
+                    android:layout_marginTop="@dimen/view_margin_12"
+                    android:layout_marginEnd="@dimen/activity_vertical_margin">
+
+                    <CheckBox
+                        android:id="@+id/cb_agree_4"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_check_box"
+                        android:button="@null"
+                        android:checked="false" />
+
+                    <TextView
+                        android:id="@+id/tv_agree_4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/text_margin_8"
+                        android:layout_weight="23"
+                        android:text="@string/join_agree_content_4"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_content_14" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_agree_more_info" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_vertical_margin"
+                    android:layout_marginTop="@dimen/view_margin_12"
+                    android:layout_marginEnd="@dimen/activity_vertical_margin">
+
+                    <CheckBox
+                        android:id="@+id/cb_agree_5"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_check_box"
+                        android:button="@null"
+                        android:checked="false" />
+
+                    <TextView
+                        android:id="@+id/tv_agree_5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/text_margin_8"
+                        android:layout_weight="23"
+                        android:text="@string/join_agree_content_5"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_content_14" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/ic_agree_more_info" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_vertical_margin"
+                    android:layout_marginTop="@dimen/view_margin_12"
+                    android:layout_marginEnd="@dimen/activity_vertical_margin">
+
+                    <CheckBox
+                        android:id="@+id/cb_agree_6"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/activity_vertical_margin"
+                        android:background="@drawable/bg_check_box"
+                        android:button="@null"
+                        android:checked="false" />
+
+                    <TextView
+                        android:id="@+id/tv_agree_6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/text_margin_8"
+                        android:layout_weight="24"
+                        android:text="@string/join_agree_content_6"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_content_14" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_vertical_margin"
+                    android:layout_marginTop="@dimen/view_margin_12"
+                    android:layout_marginEnd="@dimen/activity_vertical_margin">
+
+                    <CheckBox
+                        android:id="@+id/cb_agree_7"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/activity_vertical_margin"
+                        android:background="@drawable/bg_check_box"
+                        android:button="@null"
+                        android:checked="false" />
+
+                    <TextView
+                        android:id="@+id/tv_agree_7"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/text_margin_8"
+                        android:layout_weight="24"
+                        android:text="@string/join_agree_content_7"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_content_14" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/activity_vertical_margin"
+                    android:layout_marginTop="@dimen/view_margin_12"
+                    android:layout_marginEnd="@dimen/activity_vertical_margin"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin">
+
+                    <CheckBox
+                        android:id="@+id/cb_agree_8"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/activity_vertical_margin"
+                        android:background="@drawable/bg_check_box"
+                        android:button="@null"
+                        android:checked="false" />
+
+                    <TextView
+                        android:id="@+id/tv_agree_8"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/text_margin_8"
+                        android:layout_weight="24"
+                        android:text="@string/join_agree_content_8"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_content_14" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_join"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:background="@color/deepBlueForBtn"
+                android:gravity="center"
+                android:text="@string/join_complete"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_content_18"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ly_agree_check_box" />
+
+            <TextView
+                android:id="@+id/tv_copy_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:text="@string/join_copy_right"
+                android:textColor="@color/grayForText"
+                android:textSize="@dimen/text_content_12"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bt_join" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

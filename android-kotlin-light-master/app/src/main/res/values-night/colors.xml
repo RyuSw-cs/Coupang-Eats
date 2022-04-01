@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent">#00000000</color>
+    <color name="colorPrimary">#fcfcfc</color>
+    <color name="colorPrimaryDark">#00AFFE</color>
+    <color name="colorAccent">#00AFFE</color>
+
+    <!-- 기본 -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="whiteForBackground">#FFFFFF</color>
+    <color name="translucent30WhiteForBackground">#4DFFFFFF</color>
+
+    <color name="blackForText">#4a4a4a</color>
+    <color name="translucent30BlackForBackground">#4D000000</color>
+    <color name="translucent50BlackForBackground">#80000000</color>
+
+    <color name="redForText">#d9534f</color>
+    <color name="redForWarningText">#C91400</color>
+
+    <color name="blueForBtn">#00AFFE</color>
+    <color name="blueForText">#2197CC</color>
+    <color name="deepBlueForBtn">#0075E9</color>
+
+    <color name="skyForBackground">#D7F3FF</color>
+
+    <color name="grayForPictureBackground">#FAFAFA</color>
+    <color name="grayForBottomNaviUnSelected">#9099A0</color>
+    <color name="grayForText">#90969A</color>
+    <color name="grayForBoldText">#4D545F</color>
+    <color name="grayForBorderLine">#858D95</color>
+    <color name="grayForDivider">#E2E2E4</color>
+    <color name="grayForBottomSheet">#484848</color>
+    <color name="grayForRatingBar">#DFE3E9</color>
+
+    <color name="navyForBackground">#202B37</color>
+    <color name="navyForBottomNaviSelected">#06021F</color>
+
+    <color name="yellowForRatingBar">#FDC202</color>
+</resources>

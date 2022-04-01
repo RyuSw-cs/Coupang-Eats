@@ -1,0 +1,180 @@
+<resources>
+    <string name="app_name">쿠팡이츠</string>
+
+    <!-- Naming Rules -->
+    <!-- 도메인명_컴포넌트함축어_용도(=목적) -->
+
+    <!-- Main -->
+    <string name="main_btm_nav_home_title">홈</string>
+    <string name="main_btm_nav_search_title">검색</string>
+    <string name="main_btm_nav_favorite_title">즐겨찾기</string>
+    <string name="main_btm_nav_order_list_title">주문내역</string>
+    <string name="main_btm_nav_my_page_title">마이페이지</string>
+
+    <!-- Home -->
+    <string name="home_tv_last_title">아직 뭘 먹을지 고민이신가요?</string>
+    <string name="home_tv_last_content">메뉴 고민을 끝낼 쿠팡이츠의 맛집 리스트</string>
+    <string name="home_tv_eats_popular">이츠 추천</string>
+    <string name="home_tv_biggest_review">리뷰 최고</string>
+    <string name="home_tv_biggest_order">주문 많은</string>
+    <string name="home_tv_company_info_title">쿠팡(주) | 대표이사 : 박대준></string>
+    <string name="home_tv_company_info_num">사업자 등록번호 : 120–88–00767 | 통신판매업신고 : 2017-서울송파-0680 | 서울시 송파구 송파대로 570</string>
+    <string name="home_tv_company_call_center_title">쿠팡이츠 고객센터: </string>
+    <string name="home_tv_company_call_center">1670–9827</string>
+    <string name="home_tv_company_email"> | 이메일 문의: eatshelp@coupang.com |\n쿠팡은 통신판매중개자로서 통신판매의 당사자가 아니며, 판매자가 등록한 상품 정보, 상품의 품질 및 거래에 대해서 일체의 책임을
+        지지 않습니다.</string>
+    <string name="home_tv_company_use">이용약관 및 개인정보처리방침</string>
+    <string name="home_tv_company_host">| 호스팅서비스제공자: 쿠팡(주) | </string>
+    <string name="home_tv_company_ceo">사업자정보확인</string>
+    <string name="home_tv_more_event">이벤트 전체보기</string>
+    <string name="home_tv_current_location">현재 위치</string>
+    <string name="home_tv_take_out">포장</string>
+    <string name="home_tv_korean_food">한식</string>
+    <string name="home_tv_chicken">치킨</string>
+    <string name="home_tv_snack_bar">분식</string>
+    <string name="home_tv_cutlet">돈까스</string>
+    <string name="home_tv_pork_feet">족발/보쌈</string>
+    <string name="home_tv_steamed">찜/탕</string>
+    <string name="home_tv_grill">구이</string>
+    <string name="home_tv_pizza">피자</string>
+    <string name="home_tv_chinese">중식</string>
+    <string name="home_tv_japanese">일식</string>
+    <string name="home_tv_fish">회/해물</string>
+    <string name="home_tv_western_food">양식</string>
+    <string name="home_tv_coffee">커피/차</string>
+    <string name="home_tv_dessert">디저트</string>
+    <string name="home_tv_snack">간식</string>
+    <string name="home_tv_asia">아시안</string>
+    <string name="home_tv_sandwich">샌드위치</string>
+    <string name="home_tv_salad">샐러드</string>
+    <string name="home_tv_burger">버거</string>
+    <string name="home_tv_mexican">맥시칸</string>
+    <string name="home_tv_lunch_box">도시락</string>
+    <string name="home_tv_porridge">죽</string>
+    <string name="home_tv_franchisee">프랜차이즈</string>
+    <string name="home_tv_new_store">신규 맛집</string>
+    <string name="home_tv_one_serving">1인분</string>
+    <string name="home_tv_choice_store">골라먹는 맛집</string>
+    <string name="home_tv_sort">매장 정렬</string>
+    <string name="home_tv_sort_popular">추천순</string>
+    <string name="home_tv_sort_order">주문많은순</string>
+    <string name="home_tv_sort_distance">가까운순</string>
+    <string name="home_tv_sort_high_rate">별점높은순</string>
+    <string name="home_tv_sort_new_store">신규매장순</string>
+    <string name="home_tv_fast_delivery">치타배달</string>
+    <string name="home_tv_delivery_cost">배달비</string>
+    <string name="home_tv_delivery_cost_title">배달비 전체</string>
+    <string name="home_tv_delivery_cost_content">무료배달</string>
+    <string name="home_tv_delivery_cost_free">무료배달</string>
+    <string name="home_tv_delivery_cost_thousand">1,000</string>
+    <string name="home_tv_delivery_cost_two_thousand">2,000</string>
+    <string name="home_tv_delivery_cost_three_thousand">3,000</string>
+    <string name="home_tv_all">전체</string>
+    <string name="home_bt_agree">적용하기</string>
+    <string name="home_tv_least_cost_title">최소주문</string>
+    <string name="home_tv_least_cost_five_thousand">최소주문</string>
+    <string name="home_tv_least_cost_ten_thousand">최소주문</string>
+    <string name="home_tv_least_cost_twelve_thousand">최소주문</string>
+    <string name="home_tv_least_fifteen_thousand">최소주문</string>
+    <string name="home_tv_least_cost">최소주문</string>
+    <string name="home_bt_discount_coupon">할인쿠폰</string>
+
+
+    <!-- MyPage -->
+    <string name="my_page_tv_counter">%1d 번 눌렀습니다.</string>
+    <string name="my_page_btn_counting_number">숫자 세기</string>
+
+    <!-- Start -->
+    <string name="start_btn_content">시작하기</string>
+
+    <!-- Area Permission -->
+    <string name="area_permission_title">주소 입력하기</string>
+    <string name="area_permission_big_content">지금 어디에 계신가요?</string>
+    <string name="area_permission_normal_content">주문할 지역을 선택해보세요.</string>
+    <string name="area_permission_small_content">내 주변 상점들을 빠르게 살펴볼 수 있습니다.</string>
+    <string name="area_permission_select">주문 지역 선택</string>
+
+    <!-- Login -->
+    <string name="login_start_title">이츠 시작하기</string>
+    <string name="login_start_content">지금 로그인하고\n<b>무료배달과 기간 한정 쿠폰</b> 혜택 놓치지 마세요.</string>
+    <string name="login_start_app_login">쿠팡 앱으로 간편 로그인</string>
+    <string name="login_start_email_login">쿠팡 아이디(이메일)로 로그인</string>
+    <string name="login_no_user">아직 회원이 아니신가요?</string>
+    <string name="login_join">회원가입</string>
+    <string name="login_email">이메일</string>
+    <string name="login_password">비밀번호</string>
+    <string name="login_email_hint">쿠팡 아이디(이메일) 입력</string>
+    <string name="login_pw_hint">비밀번호 입력</string>
+    <string name="login_login">로그인</string>
+    <string name="login_find_id">아이디 찾기</string>
+    <string name="login_find_pw">비밀번호 찾기</string>
+    <string name="login_fail">입력하신 아이디 또는 비밀번호가 일치하지\n않습니다.</string>
+    <string name="login_bt_okay">확인</string>
+
+    <!-- Join -->
+    <string name="join_content">회원정보를 입력해주세요</string>
+    <string name="join_id_hint">아이디(이메일)</string>
+    <string name="join_pw_hint">비밀번호</string>
+    <string name="join_name_hint">이름</string>
+    <string name="join_phone_num_hint">휴대폰 번호</string>
+    <string name="join_agree_title">쿠팡 서비스 약관에 동의해주세요</string>
+    <string name="join_agree_all">모두 동의합니다.</string>
+    <string name="join_agree_all_content">동의에는 필수 및 선택 목적(광고성 정보 수신 포함)에 대한 동의가 포함되어있으며, 선택 목적의 동의를 거부하시는 경우에도 서비스 이용이 가능합니다.</string>
+    <string name="join_agree_old">[필수] 만 14세 이상입니다</string>
+    <string name="join_agree_use">[필수] 쿠팡 이용약관 동의</string>
+    <string name="join_agree_content_1">[필수] 전자금융거래 이용약관 동의</string>
+    <string name="join_agree_content_2">[필수] 개인정보 수집 및 이용 동의</string>
+    <string name="join_agree_content_3">[필수] 개인정보 제3자 제공 동의</string>
+    <string name="join_agree_content_4">[선택] 광고성 목적의 개인정보 수집 및 이용 동의</string>
+    <string name="join_agree_content_5">[선택] 광고성 정보 수신 동의</string>
+    <string name="join_agree_content_6">[선택] 이메일 수신 동의</string>
+    <string name="join_agree_content_7">[선택] SMS,MMS 수신 동의</string>
+    <string name="join_agree_content_8">[선택] 앱 푸시 수신 동의</string>
+    <string name="join_complete">동의하고 가입하기</string>
+    <string name="join_must_check">필수 항목에 모두 동의해주세요</string>
+    <string name="join_copy_right">&#169;Coupang Corp. All rights reserved.</string>
+
+    <!-- Location -->
+    <string name="location_tv_title">주소 설정</string>
+    <string name="location_tv_search_content">도로명, 건물명 또는 지번으로 검색</string>
+    <string name="location_tv_tip">검색 Tip</string>
+    <string name="location_tv_add_company">회사 추가</string>
+    <string name="location_tv_add_home">집 추가</string>
+    <string name="location_bt_current_location_search">현재 위치로 주소찾기</string>
+    <string name="location_bt_apply">설정하기</string>
+    <string name="location_tv_division">*</string>
+    <string name="location_tv_move_map">지도를 움직여 주소지를 설정하세요</string>
+    <string name="location_tv_road_address_title"> 도로명 <b>+ 건물번호</b></string>
+    <string name="location_tv_road_address_example">(예: 송파대로 570)</string>
+    <string name="location_tv_small_address_title"> 동/읍/면/리 <b>+ 번지</b></string>
+    <string name="location_tv_small_address_example">(예: 신천동 7-30)</string>
+    <string name="location_tv_building_title"> 건물명, 아파트명</string>
+    <string name="location_tv_building_example">(예: 반포자이아파트)</string>
+    <string name="location_tv_no_result">검색 결과가 없습니다.\n지번, 도로명, 건물명을 입력해주세요.</string>
+    <string name="location_tv_road_address">도로명</string>
+    <string name="location_tv_old_address">지 번</string>
+    <string name="location_tv_relocation">위치를 설정중입니다</string>
+    <string name="location_detail_title">주소 상세 정보</string>
+    <string name="location_detail_address_hint">상세주소 (아파트/동/호)</string>
+    <string name="location_detail_address_announce_hint">길 안내 (예 : 1층에 올리브영이 있는 오피스텔)</string>
+    <string name="location_detail_address">상세주소</string>
+    <string name="location_detail_announce">길 안내</string>
+    <string name="location_detail_map">지도에서 위치 확인하기</string>
+    <string name="location_detail_okay">완료</string>
+    <string name="location_home">집</string>
+    <string name="location_company">회사</string>
+    <string name="location_another">기타</string>
+    <string name="location_detail_nickname_hint">주소 별칭</string>
+    <string name="location_detail_address_title">상세주소 |</string>
+    <string name="location_detail_nickname_title">길 안내 |</string>
+
+    <!-- Store -->
+    <string name="store_delivery"><b>배달</b></string>
+    <string name="store_take_out"><b>포장</b></string>
+    <string name="store_more">자세히</string>
+    <string name="store_delivery_cost">배달비</string>
+    <string name="store_least_delivery_cost">최소주문</string>
+    <string name="store_info">매장·원산지정보</string>
+    <string name="store_more_review">포토 리뷰\n더보기></string>
+
+</resources>

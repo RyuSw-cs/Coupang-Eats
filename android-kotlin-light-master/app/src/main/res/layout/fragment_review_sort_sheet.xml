@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:gravity="center"
+        android:text="리뷰 정렬"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_18"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:src="@drawable/ic_cancel"
+        app:layout_constraintBottom_toBottomOf="@id/tv_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_title" />
+
+    <View
+        android:id="@+id/div_title"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grayForPictureBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+    <LinearLayout
+        android:id="@+id/ly_current"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_sheet_store_sort"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/div_title">
+
+        <ImageView
+            android:id="@+id/iv_popular"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/ic_location_check"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_popular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/view_margin_14"
+            android:paddingBottom="@dimen/view_margin_14"
+            android:paddingStart="@dimen/view_margin_6"
+            android:text="최신순"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_16" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_review_help"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_sheet_store_sort"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_current">
+
+        <ImageView
+            android:id="@+id/iv_review_help"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/ic_location_check"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_review_help"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/view_margin_14"
+            android:paddingBottom="@dimen/view_margin_14"
+            android:paddingStart="@dimen/view_margin_6"
+            android:text="리뷰 도움 순"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_16" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_high_rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_sheet_store_sort"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_review_help">
+
+        <ImageView
+            android:id="@+id/iv_high_rate"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/ic_location_check"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_high_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/view_margin_14"
+            android:paddingBottom="@dimen/view_margin_14"
+            android:paddingStart="@dimen/view_margin_6"
+            android:text="별점 높은 순"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_16" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ly_row_rate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_sheet_store_sort"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_high_rate">
+
+        <ImageView
+            android:id="@+id/iv_row_rate"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:src="@drawable/ic_location_check"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_row_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/view_margin_14"
+            android:paddingBottom="@dimen/view_margin_14"
+            android:paddingStart="@dimen/view_margin_6"
+            android:text="별점 낮은 순"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_16" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

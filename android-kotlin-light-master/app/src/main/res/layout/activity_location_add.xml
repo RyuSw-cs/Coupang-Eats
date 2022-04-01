@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageButton
+        android:id="@+id/ib_cancel"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:background="@color/white"
+        android:src="@drawable/ic_map_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:text="@string/location_detail_title"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_title"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/ib_cancel"
+        app:layout_constraintStart_toEndOf="@id/ib_cancel"
+        app:layout_constraintTop_toTopOf="@id/ib_cancel" />
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="@dimen/image_location_icon_size"
+        android:layout_height="@dimen/image_location_icon_size"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:src="@drawable/ic_location"
+        app:layout_constraintBottom_toBottomOf="@id/ly_location"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ly_location" />
+
+    <LinearLayout
+        android:id="@+id/ly_location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/view_margin_16"
+        android:layout_marginTop="@dimen/store_title_top_padding"
+        android:orientation="vertical"
+        app:layout_constraintStart_toEndOf="@+id/iv_icon"
+        app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/location_tv_title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_15" />
+
+        <TextView
+            android:id="@+id/tv_detail_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_margin_6"
+            android:text="@string/location_tv_search_content"
+            android:textColor="@color/grayForText"
+            android:textSize="@dimen/text_content_14" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/div_location"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/view_margin_16"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:background="@color/grayForBorderLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_location" />
+
+    <EditText
+        android:id="@+id/et_detail_address_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:hint="@string/location_detail_address_hint"
+        android:padding="@dimen/activity_vertical_margin"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grayForText"
+        android:textSize="@dimen/text_content_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/div_location" />
+
+    <TextView
+        android:id="@+id/tv_detail_address_focus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:text="상세주소 | "
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_16"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/et_detail_address_hint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/et_detail_address_hint" />
+
+    <EditText
+        android:id="@+id/et_detail_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:background="@null"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grayForText"
+        android:textSize="@dimen/text_content_16"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/tv_detail_address_focus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_detail_address_focus"
+        app:layout_constraintTop_toTopOf="@id/tv_detail_address_focus" />
+
+
+    <View
+        android:id="@+id/div_address"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:background="@color/grayForPictureBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_detail_address_hint" />
+
+
+    <EditText
+        android:id="@+id/et_address_detail_announce_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:hint="@string/location_detail_address_announce_hint"
+        android:padding="@dimen/activity_vertical_margin"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grayForText"
+        android:textSize="@dimen/text_content_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/div_address" />
+
+    <TextView
+        android:id="@+id/tv_address_detail_announce_focus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:text="길 안내 | "
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_16"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/et_address_detail_announce_hint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/et_address_detail_announce_hint" />
+
+    <EditText
+        android:id="@+id/et_address_detail_announce"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:background="@null"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grayForText"
+        android:textSize="@dimen/text_content_16"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/tv_address_detail_announce_focus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_address_detail_announce_focus"
+        app:layout_constraintTop_toTopOf="@id/tv_address_detail_announce_focus" />
+
+
+    <View
+        android:id="@+id/div_announce"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:background="@color/grayForPictureBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_address_detail_announce_hint" />
+
+    <LinearLayout
+        android:id="@+id/ly_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/view_margin_16"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/div_announce">
+
+        <Button
+            android:id="@+id/bt_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/bg_location_category"
+            android:gravity="center|bottom"
+            android:paddingTop="@dimen/view_margin_8"
+            android:paddingBottom="@dimen/view_margin_8"
+            android:text="@string/location_home"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_14"
+            app:drawableTopCompat="@drawable/ic_location_detail_home" />
+
+        <Button
+            android:id="@+id/bt_company"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/view_margin_16"
+            android:layout_marginEnd="@dimen/view_margin_16"
+            android:layout_weight="1"
+            android:background="@drawable/bg_location_category"
+            android:gravity="center|bottom"
+            android:paddingTop="@dimen/view_margin_8"
+            android:paddingBottom="@dimen/view_margin_8"
+            android:text="@string/location_company"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_14"
+            app:drawableTopCompat="@drawable/ic_location_detail_company" />
+
+        <Button
+            android:id="@+id/bt_another"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/bg_location_category"
+            android:gravity="center|bottom"
+            android:paddingTop="@dimen/view_margin_8"
+            android:paddingBottom="@dimen/view_margin_8"
+            android:text="@string/location_another"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_14"
+            app:drawableTopCompat="@drawable/ic_location_detail_another" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_detail_announce_nickname_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:hint="@string/location_detail_nickname_hint"
+        android:paddingStart="@dimen/activity_vertical_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingEnd="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/text_content_16"
+        android:textColorHint="@color/grayForText"
+        android:textSize="@dimen/text_content_16"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_category" />
+
+    <TextView
+        android:id="@+id/tv_detail_announce_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/activity_vertical_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/text_content_16"
+        android:text="주소 별칭 | "
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_16"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/et_detail_announce_nickname_hint"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/et_detail_announce_nickname_hint" />
+
+    <EditText
+        android:id="@+id/et_detail_announce_nickname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:background="@null"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingEnd="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/text_content_16"
+        android:textColor="@color/black"
+        android:textColorHint="@color/grayForText"
+        android:textSize="@dimen/text_content_16"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/tv_detail_announce_nickname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_detail_announce_nickname"
+        app:layout_constraintTop_toTopOf="@id/tv_detail_announce_nickname" />
+
+    <View
+        android:id="@+id/div_nickname"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:background="@color/grayForPictureBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_detail_announce_nickname_hint" />
+
+    <LinearLayout
+        android:id="@+id/ly_map_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_map_btn"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/div_nickname">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_re_location" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="@dimen/view_margin_16"
+            android:text="@string/location_bt_current_location_search"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_14"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_okay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blueForBtn"
+        android:padding="@dimen/button_biggest_padding"
+        android:text="@string/location_detail_okay"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_content_18"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

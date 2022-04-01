@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/ly_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_order_list_search_bar"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@id/iv_search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="12"
+            android:background="@null"
+            android:hint="주문한 메뉴/매장을 찾아보세요"
+            android:padding="@dimen/view_margin_10"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grayForText"
+            android:textSize="@dimen/text_content_14" />
+
+        <ImageView
+            android:id="@+id/iv_delete_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:backgroundTint="@color/grayForRatingBar"
+            android:src="@drawable/ic_login_id_cancel" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:background="@color/white"
+        android:src="@drawable/ic_home_search"
+        app:layout_constraintBottom_toBottomOf="@+id/ly_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ly_search" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_past_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/view_margin_8"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_search"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/ic_no_search"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:src="@drawable/ic_big_search"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/tv_empty_cart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_empty_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/view_margin_12"
+        android:text="주문내역 검색 결과가 없습니다."
+        android:textColor="@color/grayForDivider"
+        android:textSize="@dimen/text_content_14"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/bt_go_home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <Button
+        android:id="@+id/bt_go_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_store_title"
+        android:minWidth="1dp"
+        android:minHeight="1dp"
+        android:paddingStart="12dp"
+        android:paddingTop="4dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="4dp"
+        android:stateListAnimator="@null"
+        android:text="쿠팡이츠 맛집 구경가기"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_content_14"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

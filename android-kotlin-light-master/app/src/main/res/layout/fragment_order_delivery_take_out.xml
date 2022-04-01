@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <com.naver.maps.map.MapView
+        android:id="@+id/m_order_map"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <LinearLayout
+        android:id="@+id/ly_take_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_margin="@dimen/activity_vertical_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/m_order_map"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/tv_order_takeout_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_weight="4"
+            android:gravity="top"
+            android:text="매장주소"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_14" />
+
+        <TextView
+            android:id="@+id/tv_order_takeout_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_weight="15"
+            android:gravity="top"
+            android:text="매장주소"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_content_14" />
+
+        <TextView
+            android:id="@+id/tv_map"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_gravity="top"
+            android:layout_weight="3"
+            android:text="주소복사"
+            android:textColor="@color/blueForText"
+            android:textSize="@dimen/text_content_12" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
