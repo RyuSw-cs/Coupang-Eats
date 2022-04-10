@@ -1,6 +1,7 @@
 package com.softsquared.template.kotlin.src.main.orderList.preparing.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,14 +9,18 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.softsquared.template.kotlin.R
+import com.softsquared.template.kotlin.config.ApplicationClass
 import com.softsquared.template.kotlin.databinding.ItemOrderDetailInfoBinding
 import com.softsquared.template.kotlin.src.main.orderList.models.OrderListDetailResponse
 import com.softsquared.template.kotlin.src.main.orderList.adapter.OrderMenuListAdapter
+import com.softsquared.template.kotlin.src.main.orderList.dialog.ReviewReceiptDialog
 
 class PreparingOrderListAdapter(val context: Context, val result: List<OrderListDetailResponse>) :
     RecyclerView.Adapter<PreparingOrderListAdapter.PreparingOrderHolder>() {
     inner class PreparingOrderHolder(val binding: ItemOrderDetailInfoBinding) :
         RecyclerView.ViewHolder(binding.root)
+
+    var totalPrice = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PreparingOrderHolder {
         val view =
@@ -39,6 +44,11 @@ class PreparingOrderListAdapter(val context: Context, val result: List<OrderList
 
                 binding.ivStatus.visibility = View.VISIBLE
 
+                for(priceData in orderMenuInfo){
+                    this@PreparingOrderListAdapter.totalPrice += priceData.mulPrice
+                }
+                binding.tvTotalPrice.text = "${ApplicationClass.DEC.format(this@PreparingOrderListAdapter.totalPrice)}원"
+
                 Glide.with(context)
                     .load(storeImgUrl)
                     .centerCrop()
@@ -55,7 +65,10 @@ class PreparingOrderListAdapter(val context: Context, val result: List<OrderList
 
                 //영수증
                 binding.tvReceipt.setOnClickListener {
-
+                    val intent = Intent(context, ReviewReceiptDialog::class.java)
+                    intent.putExtra("totalPrice",binding.tvTotalPrice.text)
+                    intent.putExtra("data", result[position])
+                    context.startActivity(intent)
                 }
             }
 

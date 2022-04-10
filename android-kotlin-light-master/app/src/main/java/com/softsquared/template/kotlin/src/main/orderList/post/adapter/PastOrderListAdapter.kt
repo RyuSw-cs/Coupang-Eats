@@ -11,6 +11,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.softsquared.template.kotlin.config.ApplicationClass
 import com.softsquared.template.kotlin.databinding.ItemOrderDetailInfoBinding
 import com.softsquared.template.kotlin.src.main.order.OrderActivity
 import com.softsquared.template.kotlin.src.main.orderList.adapter.OrderMenuListAdapter
@@ -29,6 +30,7 @@ class PastOrderListAdapter(val context: Context, val result: List<OrderListDetai
         RecyclerView.ViewHolder(binding.root)
 
     var userOrderIdx = 0
+    var totalPrice = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PastOrderHolder {
         val view =
@@ -42,7 +44,10 @@ class PastOrderListAdapter(val context: Context, val result: List<OrderListDetai
                 binding.tvStoreTitle.text = storeName
                 binding.tvOrderTime.text = orderTime
                 binding.tvOrderState.text = status
-                binding.tvTotalPrice.text = totalPrice
+                for(priceData in orderMenuInfo){
+                    this@PastOrderListAdapter.totalPrice += priceData.mulPrice
+                }
+                binding.tvTotalPrice.text = "${ApplicationClass.DEC.format(this@PastOrderListAdapter.totalPrice)}원"
 
                 Glide.with(context)
                     .load(storeImgUrl)
@@ -57,6 +62,7 @@ class PastOrderListAdapter(val context: Context, val result: List<OrderListDetai
                 binding.tvReceipt.setOnClickListener {
                     val intent = Intent(context, ReviewReceiptDialog::class.java)
                     intent.putExtra("data", result[position])
+                    intent.putExtra("totalPrice",binding.tvTotalPrice.text)
                     context.startActivity(intent)
                 }
                 //재주문,

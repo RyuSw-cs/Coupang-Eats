@@ -2,6 +2,7 @@ package com.softsquared.template.kotlin.src.main.orderList.dialog
 
 import android.os.Bundle
 import android.view.Window
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.softsquared.template.kotlin.config.ApplicationClass
@@ -18,6 +19,8 @@ class ReviewReceiptDialog : AppCompatActivity() {
         binding = DialogReceiptBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT,WindowManager.LayoutParams.WRAP_CONTENT)
+
         var data = intent.getSerializableExtra("data") as OrderListDetailResponse
 
         with(binding) {
@@ -27,16 +30,17 @@ class ReviewReceiptDialog : AppCompatActivity() {
             tvStoreName.text = data.storeName
             tvOrderNum.text = data.userOrderIdx.toString()
             tvDate.text = data.orderTime
-            tvOrderContent.text = data.totalPrice
+            tvOrderContent.text = intent.getStringExtra("totalPrice")
+
             //리사이클러뷰 해야함
             rcvMenuList.layoutManager =
                 LinearLayoutManager(this@ReviewReceiptDialog, LinearLayoutManager.VERTICAL, false)
             rcvMenuList.adapter = ReviewReceiptAdapter(data.orderMenuInfo)
             //배달비 해야함
             tvDiscountContent.text = "0원"
-            tvTotalPrice.text = data.totalPrice
+            tvTotalPrice.text = intent.getStringExtra("totalPrice")
             tvAddress.text =
-                "(상세주소) ${data.userDeliveryAddress.address}\n${data.userDeliveryAddress.addressDetail}"
+                "(배달주소) ${data.userDeliveryAddress.address}\n${data.userDeliveryAddress.addressDetail}"
         }
     }
 }

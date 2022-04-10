@@ -1,6 +1,7 @@
 package com.softsquared.template.kotlin.src.main.orderList.dialog
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.softsquared.template.kotlin.config.ApplicationClass
@@ -21,7 +22,12 @@ class ReviewReceiptAdapter(private val orderMenuInfo: List<OrderListMenuInfoResp
         with(holder) {
             with(orderMenuInfo[position]) {
                 binding.tvTitle.text = menuName
-                binding.tvMenuOption.text = menuOptions
+                if(menuOptions == ""){
+                    binding.tvMenuOption.visibility = View.GONE
+                }
+                else{
+                    binding.tvMenuOption.text = menuOptions
+                }
                 binding.tvTotalPrice.text = "${ApplicationClass.DEC.format(mulPrice)}원"
             }
         }
