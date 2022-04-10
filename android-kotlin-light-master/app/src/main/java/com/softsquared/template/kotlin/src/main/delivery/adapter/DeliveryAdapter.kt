@@ -21,7 +21,7 @@ class DeliveryAdapter(private val cartMenu: List<StoreInfoMenuCartInfoResponse>)
     override fun onBindViewHolder(holder: DeliveryHolder, position: Int) {
         with(holder) {
             with(cartMenu[position]) {
-                binding.tvCount.text = "${position + 1}"
+                binding.tvCount.text = orderCount.toString()
                 binding.tvFoodTitle.text = menuName
                 if(menuOptions == ""){
                     binding.tvFoodDetail.visibility = View.GONE

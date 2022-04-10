@@ -20,7 +20,7 @@ class OrderMenuListAdapter(private val orderMenuInfo: List<OrderListMenuInfoResp
     override fun onBindViewHolder(holder: PastOrderMenuHolder, position: Int) {
         with(holder) {
             with(orderMenuInfo[position]) {
-                binding.tvCount.text = "${position + 1}"
+                binding.tvCount.text = orderCount.toString()
                 binding.tvFoodTitle.text = menuName
                 if (menuOptions == "") {
                     binding.tvFoodDetail.visibility = android.view.View.GONE

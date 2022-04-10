@@ -33,14 +33,15 @@ class SearchResultAdapter(
         with(holder) {
             with(getList[position]) {
                 binding.tvAddressDetail.text = placeName
+                //도로명 주소가 없다면 지번으로
                 if (roadAddressName == "") {
                     binding.tvType.text = "지번"
                     binding.tvAddressDetail.text = addressName
                 } else {
                     binding.tvAddress.text = roadAddressName
                 }
+                //해당 위치 설정, 이름과 주소, 좌표를 전달해야함.
                 itemView.setOnClickListener {
-                    //위치지정됨, 프래그먼트 종료 -> 액티비티 실행
                     val intent = Intent(context, LocationAddActivity::class.java)
                     intent.putExtra("placeName", binding.tvAddressDetail.text)
                     intent.putExtra("address", binding.tvAddress.text)
@@ -56,6 +57,7 @@ class SearchResultAdapter(
 
     @SuppressLint("NotifyDataSetChanged")
     fun changeData(list: MutableList<SearchDocumentsResponse>) {
+        //RecyclerView 에 데이터가 변경됐음을 알림
         getList = list
         notifyDataSetChanged()
     }

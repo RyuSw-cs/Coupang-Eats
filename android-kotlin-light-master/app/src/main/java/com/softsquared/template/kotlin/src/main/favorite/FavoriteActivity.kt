@@ -135,17 +135,5 @@ class FavoriteActivity : BaseActivity<ActivityFavoriteBinding>(ActivityFavoriteB
 
     override fun onGetAddressFailure(error: String) {
         dismissLoadingDialog()
-        //토큰값이 없을때가 존재함.
-        binding.ivCancel.setOnClickListener {
-            finish()
-        }
-        binding.lyNoFavorite.visibility = View.VISIBLE
-        binding.lyTotal.visibility = View.GONE
-        binding.rcvStoreList.visibility = View.GONE
-        binding.tvModify.visibility = View.GONE
-        binding.divFavorite.visibility = View.GONE
-        binding.btGoPastList.setOnClickListener {
-            finish()
-        }
     }
 }

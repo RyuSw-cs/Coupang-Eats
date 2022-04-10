@@ -110,7 +110,7 @@ class LocationSelectFragment(private val addressData: HomeAddressResponse) :
 
                 //만약 선택? -> 체크 표시 on
                 if (addressData.result.nowAddress.userAddressIdx == addressData.result.companyAddress.userAddressIdx) {
-                    ivCompanyCheck.visibility = View.VISIBLE
+                    ivCheck.visibility = View.VISIBLE
                 }
             }
         }

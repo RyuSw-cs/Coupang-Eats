@@ -5,19 +5,15 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.softsquared.template.kotlin.config.ApplicationClass
 import com.softsquared.template.kotlin.config.BaseActivity
 import com.softsquared.template.kotlin.databinding.ActivityStoreMenuInfoBinding
-import com.softsquared.template.kotlin.src.main.MainActivity
 import com.softsquared.template.kotlin.src.main.login.LoginActivity
-import com.softsquared.template.kotlin.src.main.order.OrderActivity
 import com.softsquared.template.kotlin.src.main.storeInfo.menu.adapter.StoreInfoMenuAdapter
 import com.softsquared.template.kotlin.src.main.storeInfo.menu.adapter.StoreInfoMenuBannerAdapter
-import com.softsquared.template.kotlin.src.main.storeInfo.menu.adapter.StoreInfoMenuDetailAdapter
 import com.softsquared.template.kotlin.src.main.storeInfo.menu.cart.StoreInfoMenuCartService
 import com.softsquared.template.kotlin.src.main.storeInfo.menu.cart.StoreInfoMenuCartView
 import com.softsquared.template.kotlin.src.main.storeInfo.menu.cart.models.StoreInfoMenuCartGetResponse
@@ -32,7 +28,7 @@ class StoreInfoMenuDetailActivity :
     lateinit var bannerHandler: Handler
     lateinit var sliderRunnable: Runnable
     lateinit var data: StoreInfoMenuResponse
-    var originalPrice = 0
+    var changePrice = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,7 +73,7 @@ class StoreInfoMenuDetailActivity :
     override fun onGetStoreInfoMenuSuccess(response: StoreInfoMenuResponse) {
         dismissLoadingDialog()
         data = response
-        originalPrice = data.result.menuPrice
+        changePrice = data.result.menuPrice
         //이미지 개수에 따른 배너 설정 다르게.
         with(binding) {
             tvMenuTitle.text = response.result.menuName
@@ -97,8 +93,8 @@ class StoreInfoMenuDetailActivity :
                     /* background 변경 */
                     btMinus.isEnabled = false
                 } else {
-                    data.result.menuPrice -= originalPrice
-                    tvPrice.text = "${ApplicationClass.DEC.format(data.result.menuPrice)}원"
+                    changePrice -= data.result.menuPrice
+                    tvPrice.text = "${ApplicationClass.DEC.format(changePrice)}원"
                     tvCount.text = "${tvCount.text.toString().toInt() - 1}"
                 }
             }
@@ -106,8 +102,8 @@ class StoreInfoMenuDetailActivity :
             /* 플러스 버튼 */
             btPlus.setOnClickListener {
                 tvCount.text = "${tvCount.text.toString().toInt() + 1}"
-                data.result.menuPrice += originalPrice
-                tvPrice.text = "${ApplicationClass.DEC.format(data.result.menuPrice)}원"
+                changePrice += data.result.menuPrice
+                tvPrice.text = "${ApplicationClass.DEC.format(changePrice)}원"
                 btMinus.isEnabled = true
             }
 
@@ -263,7 +259,9 @@ class StoreInfoMenuDetailActivity :
 
 
     fun changePrice(addPrice: Int) {
-        data.result.menuPrice += addPrice
-        binding.tvPrice.text = "${ApplicationClass.DEC.format(data.result.menuPrice)}원"
+        //옵션에 따른 가격 변동
+        data.result.menuPrice += (addPrice * binding.tvCount.text.toString().toInt())
+        changePrice += (addPrice * binding.tvCount.text.toString().toInt())
+        binding.tvPrice.text = "${ApplicationClass.DEC.format(changePrice)}원"
     }
 }

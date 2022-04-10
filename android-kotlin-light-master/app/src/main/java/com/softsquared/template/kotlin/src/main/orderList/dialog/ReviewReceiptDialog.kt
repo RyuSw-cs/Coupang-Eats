@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.softsquared.template.kotlin.config.ApplicationClass
 import com.softsquared.template.kotlin.databinding.DialogReceiptBinding
 import com.softsquared.template.kotlin.src.main.orderList.models.OrderListDetailResponse
+import com.softsquared.template.kotlin.util.dialogResize
 
 class ReviewReceiptDialog : AppCompatActivity() {
 

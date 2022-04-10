@@ -23,7 +23,7 @@ class StoreInfoMenuCartService(val view: StoreInfoMenuCartView) {
             RequestStoreMenuInfoCartBody(
                 menuOptions,
                 orderCount,
-                orderPrice/orderCount
+                orderPrice
             )
         ).enqueue(
             object : Callback<StoreInfoMenuCartPostResponse> {
@@ -59,7 +59,7 @@ class StoreInfoMenuCartService(val view: StoreInfoMenuCartView) {
             RequestStoreMenuInfoCartBody(
                 menuOptions,
                 orderCount,
-                orderPrice/orderCount
+                orderPrice
             )
         ).enqueue(
             object : Callback<StoreInfoMenuCartPostResponse> {

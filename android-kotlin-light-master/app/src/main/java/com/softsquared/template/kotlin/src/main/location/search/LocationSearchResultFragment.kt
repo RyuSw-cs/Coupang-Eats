@@ -35,7 +35,7 @@ class LocationSearchResultFragment(
         activity.continueGetSearchResult(keyword)
     }
 
-    fun addListData(list: List<SearchDocumentsResponse>) {
+    private fun addListData(list: List<SearchDocumentsResponse>) {
         for (data in list.indices) {
             searchList.add(list[data])
         }

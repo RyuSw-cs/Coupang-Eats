@@ -24,8 +24,6 @@ class StoreInfoMenuDetailAdapter(
 
     lateinit var lastCheckBox: CheckBox
     var radioTitle = ""
-    var checkRadio = false
-
     inner class StoreMenuCheckHolder(val checkBinding: ItemMenuInfoCheckBinding) :
         RecyclerView.ViewHolder(checkBinding.root)
 
