@@ -133,7 +133,8 @@ class OrderActivity : BaseActivity<ActivityOrderBinding>(ActivityOrderBinding::i
                         recycle,
                         8,
                         "빠르게 와주세요.",
-                        cart
+                        cart,
+                        1000
                     )
                 }
             }

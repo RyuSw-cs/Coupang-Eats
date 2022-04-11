@@ -9,6 +9,7 @@ data class StoreInfoMenuDetailResponse(
     val menuDetail: String,
     val menuImgUrl: String,
     val isOption: String,
+    //판매중, 품절, 오늘만 품절
     val status: String,
     val isManyOrder:String,
     val isManyReview:String

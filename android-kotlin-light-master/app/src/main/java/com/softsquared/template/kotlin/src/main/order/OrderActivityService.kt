@@ -17,7 +17,8 @@ class OrderActivityService(val view: OrderActivityView) {
         isSpoon: String,
         deliveryManOptionIdx: Int,
         deliveryManContent: String,
-        cartList: List<String>
+        cartList: List<String>,
+        deliveryFee:Int
     ) {
         val orderRetrofitInstance =
             ApplicationClass.sRetrofit.create(OrderRetrofitInstance::class.java)
@@ -29,7 +30,7 @@ class OrderActivityService(val view: OrderActivityView) {
                 message,
                 isSpoon,
                 deliveryManOptionIdx,
-                deliveryManContent
+                deliveryManContent, deliveryFee
             ), cartList
         ).enqueue(object : Callback<OrderDeliveryResponse> {
             override fun onResponse(

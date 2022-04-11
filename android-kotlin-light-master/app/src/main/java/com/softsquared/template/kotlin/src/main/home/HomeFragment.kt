@@ -188,10 +188,10 @@ class HomeFragment :
                 layoutManager =
                     LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
                 val list = mutableListOf<HomeStoreInfoResponse>()
-                for (data in response.result.indices) {
+                for (data in response.result.getStoreHomeRes.indices) {
                     //거리가 10km 이상 차이남
-                    if (response.result[data].storeInfo.distance < 5.0) {
-                        list.add(response.result[data])
+                    if (response.result.getStoreHomeRes[data].storeInfo.distance < 5.0) {
+                        list.add(response.result.getStoreHomeRes[data])
                     }
                 }
                 //사용자의 위도 경도값도 넣어주기.

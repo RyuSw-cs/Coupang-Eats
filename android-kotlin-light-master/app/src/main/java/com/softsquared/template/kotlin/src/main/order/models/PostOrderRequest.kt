@@ -7,5 +7,6 @@ data class PostOrderRequest(
     val message: String,
     val isSpoon: String,
     val deliveryManOptionIdx: Int,
-    val deliveryManContent: String
+    val deliveryManContent: String,
+    val deliveryFee:Int
 )

@@ -21,5 +21,6 @@ data class HomeStoreDetailResponse(
     val orderCount: Int,
     val distance: Double,
     val deliveryFee: String,
-    val isNewStore:String
+    val isNewStore:String,
+    val businessStatus:String
 ) : Serializable
