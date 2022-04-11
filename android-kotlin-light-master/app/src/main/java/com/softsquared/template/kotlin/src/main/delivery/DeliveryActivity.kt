@@ -52,7 +52,8 @@ class DeliveryActivity : BaseActivity<ActivityDeliveryBinding>(ActivityDeliveryB
             tvOrderAddressContent.text = data.result.nowAddress.address
             tvOrderAddressDetailContent.text = data.result.nowAddress.addressDetail
             tvOrderPlaceName.text = data.result.storeName
-            tvTotalPrice.text = "합계: ${ApplicationClass.DEC.format(data.result.totalPrice + intent.getIntExtra("deliveryFee",0))}"
+            var deliveryFee = intent.getIntExtra("deliveryFee",0)
+            tvTotalPrice.text = "합계: ${ApplicationClass.DEC.format(data.result.totalPrice + deliveryFee)}"
 
             rcvOrderList.layoutManager =
                 LinearLayoutManager(this@DeliveryActivity, LinearLayoutManager.VERTICAL, false)

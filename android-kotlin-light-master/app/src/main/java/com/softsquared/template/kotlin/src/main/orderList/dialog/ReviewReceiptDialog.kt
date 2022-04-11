@@ -30,7 +30,8 @@ class ReviewReceiptDialog : AppCompatActivity() {
             tvStoreName.text = data.storeName
             tvOrderNum.text = data.userOrderIdx.toString()
             tvDate.text = data.orderTime
-            tvOrderContent.text = intent.getStringExtra("totalPrice")
+            tvOrderContent.text = "${ApplicationClass.DEC.format(intent.getIntExtra("totalPrice",0))}원"
+            tvDeliveryCostContent.text = "${ApplicationClass.DEC.format(intent.getIntExtra("deliveryFee",0))}원"
 
             //리사이클러뷰 해야함
             rcvMenuList.layoutManager =
@@ -38,7 +39,7 @@ class ReviewReceiptDialog : AppCompatActivity() {
             rcvMenuList.adapter = ReviewReceiptAdapter(data.orderMenuInfo)
             //배달비 해야함
             tvDiscountContent.text = "0원"
-            tvTotalPrice.text = intent.getStringExtra("totalPrice")
+            tvTotalPrice.text = "${ApplicationClass.DEC.format(intent.getIntExtra("totalPrice",0) + intent.getIntExtra("deliveryFee",0))}원"
             tvAddress.text =
                 "(배달주소) ${data.userDeliveryAddress.address}\n${data.userDeliveryAddress.addressDetail}"
         }

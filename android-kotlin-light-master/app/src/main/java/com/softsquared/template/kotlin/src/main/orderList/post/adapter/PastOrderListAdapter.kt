@@ -44,10 +44,12 @@ class PastOrderListAdapter(val context: Context, val result: List<OrderListDetai
                 binding.tvStoreTitle.text = storeName
                 binding.tvOrderTime.text = orderTime
                 binding.tvOrderState.text = status
+                var price = 0
                 for(priceData in orderMenuInfo){
-                    this@PastOrderListAdapter.totalPrice += priceData.mulPrice
+                    price += priceData.mulPrice
                 }
-                binding.tvTotalPrice.text = "${ApplicationClass.DEC.format(this@PastOrderListAdapter.totalPrice)}원"
+                //전체 가격
+                binding.tvTotalPrice.text = "${ApplicationClass.DEC.format(price+deliveryFee)}원"
 
                 Glide.with(context)
                     .load(storeImgUrl)
@@ -58,11 +60,15 @@ class PastOrderListAdapter(val context: Context, val result: List<OrderListDetai
                 binding.rcvOrderList.layoutManager =
                     LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
                 binding.rcvOrderList.adapter = OrderMenuListAdapter(orderMenuInfo)
-                //버튼 상태 변경
+
+                //영수증
                 binding.tvReceipt.setOnClickListener {
                     val intent = Intent(context, ReviewReceiptDialog::class.java)
                     intent.putExtra("data", result[position])
-                    intent.putExtra("totalPrice",binding.tvTotalPrice.text)
+                    //전체 가격
+                    intent.putExtra("totalPrice", price)
+                    //배달비
+                    intent.putExtra("deliveryFee",deliveryFee)
                     context.startActivity(intent)
                 }
                 //재주문,

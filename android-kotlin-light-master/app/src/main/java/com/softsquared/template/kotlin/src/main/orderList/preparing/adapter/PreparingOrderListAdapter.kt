@@ -44,10 +44,12 @@ class PreparingOrderListAdapter(val context: Context, val result: List<OrderList
 
                 binding.ivStatus.visibility = View.VISIBLE
 
+                var price = 0
+
                 for(priceData in orderMenuInfo){
-                    this@PreparingOrderListAdapter.totalPrice += priceData.mulPrice
+                    price += priceData.mulPrice
                 }
-                binding.tvTotalPrice.text = "${ApplicationClass.DEC.format(this@PreparingOrderListAdapter.totalPrice)}원"
+                binding.tvTotalPrice.text = "${ApplicationClass.DEC.format(price + deliveryFee)}원"
 
                 Glide.with(context)
                     .load(storeImgUrl)
@@ -66,8 +68,11 @@ class PreparingOrderListAdapter(val context: Context, val result: List<OrderList
                 //영수증
                 binding.tvReceipt.setOnClickListener {
                     val intent = Intent(context, ReviewReceiptDialog::class.java)
-                    intent.putExtra("totalPrice",binding.tvTotalPrice.text)
+                    //전체 가격
+                    intent.putExtra("totalPrice", price)
                     intent.putExtra("data", result[position])
+                    //배달비
+                    intent.putExtra("deliveryFee",deliveryFee)
                     context.startActivity(intent)
                 }
             }
