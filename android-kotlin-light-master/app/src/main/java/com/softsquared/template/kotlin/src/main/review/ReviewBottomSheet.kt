@@ -23,6 +23,11 @@ class ReviewBottomSheet(val activity: ReviewActivity, val sort: String) :
     }
 
     fun init() {
+
+        binding.ivCancel.setOnClickListener {
+            dismiss()
+        }
+
         when (sort) {
             "recent" -> {
                 binding.ivPopular.visibility = View.VISIBLE

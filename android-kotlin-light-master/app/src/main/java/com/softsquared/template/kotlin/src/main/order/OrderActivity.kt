@@ -100,7 +100,7 @@ class OrderActivity : BaseActivity<ActivityOrderBinding>(ActivityOrderBinding::i
 
             //배달비 조건
             for (idx in data.result.deliveryFeeList.indices) {
-                if(data.result.totalPrice < data.result.minimumPrice){
+                if (data.result.totalPrice < data.result.minimumPrice) {
                     break
                 }
                 if (data.result.totalPrice >= data.result.deliveryFeeList[idx].minPrice) {
@@ -110,8 +110,9 @@ class OrderActivity : BaseActivity<ActivityOrderBinding>(ActivityOrderBinding::i
                 }
             }
 
-            if(deliveryCost == -1){
-                deliveryCost = data.result.deliveryFeeList[data.result.deliveryFeeList.size-1].deliveryFee
+            if (deliveryCost == -1) {
+                deliveryCost =
+                    data.result.deliveryFeeList[data.result.deliveryFeeList.size - 1].deliveryFee
             }
 
             if (response.result.totalPrice > response.result.minimumPrice) {
@@ -162,7 +163,7 @@ class OrderActivity : BaseActivity<ActivityOrderBinding>(ActivityOrderBinding::i
                 "${ApplicationClass.DEC.format(response.result.totalPrice)}원"
 
             binding.tvTotalPrice.text =
-                "${ApplicationClass.DEC.format(response.result.totalPrice+deliveryCost)}원"
+                "${ApplicationClass.DEC.format(response.result.totalPrice + deliveryCost)}원"
 
             if (response.result.distance > 5.0) {
                 if (response.result.timeToGo == "N") {
@@ -348,7 +349,12 @@ class OrderActivity : BaseActivity<ActivityOrderBinding>(ActivityOrderBinding::i
     private fun noDeliveryDialog() {
         val builder = AlertDialog.Builder(this)
         builder.setMessage("현재 주소로 배달할 수 없습니다. 포장주문을 이용해보세요")
-        builder.setPositiveButton("확인") { dialog, _ -> dialog.dismiss() }
+        builder.setPositiveButton("확인") { dialog, _ ->
+            dialog.dismiss()
+            finishAffinity()
+            val homeIntent = Intent(this, MainActivity::class.java)
+            startActivity(homeIntent)
+        }
         builder.show()
     }
 
@@ -361,7 +367,7 @@ class OrderActivity : BaseActivity<ActivityOrderBinding>(ActivityOrderBinding::i
         intent.putExtra("storeLongitude", data.result.storeLongitude)
         intent.putExtra("storeLatitude", data.result.storeLatitude)
         intent.putExtra("cartInfo", data)
-        intent.putExtra("deliveryFee",deliveryCost)
+        intent.putExtra("deliveryFee", deliveryCost)
         intent.putExtra("orderIdx", response.result.userOrderIdx)
         startActivity(homeIntent)
         startActivity(intent)
