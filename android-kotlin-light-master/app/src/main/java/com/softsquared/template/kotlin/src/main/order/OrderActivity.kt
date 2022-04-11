@@ -41,6 +41,7 @@ class OrderActivity : BaseActivity<ActivityOrderBinding>(ActivityOrderBinding::i
 
     var storeIdx = 0
     var cartIdx = 0
+    var deliveryCost = 0
     lateinit var recommendData: MutableList<StoreInfoMenuDetailResponse>
     var deliveryCheck = false
     var isSpoon = false
@@ -96,9 +97,26 @@ class OrderActivity : BaseActivity<ActivityOrderBinding>(ActivityOrderBinding::i
             binding.lyOrderTab.removeAllTabs()
             storeIdx = response.result.storeIdx
 
+
+            //배달비 조건
+            for (idx in data.result.deliveryFeeList.indices) {
+                if(data.result.totalPrice < data.result.minimumPrice){
+                    break
+                }
+                if (data.result.totalPrice >= data.result.deliveryFeeList[idx].minPrice) {
+                    deliveryCost = data.result.deliveryFeeList[idx].deliveryFee
+                } else {
+                    continue
+                }
+            }
+
+            if(deliveryCost == -1){
+                deliveryCost = data.result.deliveryFeeList[data.result.deliveryFeeList.size-1].deliveryFee
+            }
+
             if (response.result.totalPrice > response.result.minimumPrice) {
                 binding.btOrder.text =
-                    "배달주문 ${ApplicationClass.DEC.format(response.result.totalPrice)}원 결제하기"
+                    "배달주문 ${ApplicationClass.DEC.format(response.result.totalPrice + deliveryCost)}원 결제하기"
             } else {
                 binding.btOrder.text =
                     "${ApplicationClass.DEC.format(response.result.minimumPrice)}원 이상 주문 가능"
@@ -107,6 +125,8 @@ class OrderActivity : BaseActivity<ActivityOrderBinding>(ActivityOrderBinding::i
             binding.cbRecycle.setOnCheckedChangeListener { _, isChecked ->
                 isSpoon = isChecked
             }
+
+            binding.tvDeliveryFee.text = "+${ApplicationClass.DEC.format(deliveryCost)}원"
 
             binding.btOrder.setOnClickListener {
                 //최소 조건
@@ -134,14 +154,15 @@ class OrderActivity : BaseActivity<ActivityOrderBinding>(ActivityOrderBinding::i
                         8,
                         "빠르게 와주세요.",
                         cart,
-                        1000
+                        deliveryCost
                     )
                 }
             }
             binding.tvOrderPriceContent.text =
                 "${ApplicationClass.DEC.format(response.result.totalPrice)}원"
+
             binding.tvTotalPrice.text =
-                "${ApplicationClass.DEC.format(response.result.totalPrice)}원"
+                "${ApplicationClass.DEC.format(response.result.totalPrice+deliveryCost)}원"
 
             if (response.result.distance > 5.0) {
                 if (response.result.timeToGo == "N") {
@@ -340,10 +361,10 @@ class OrderActivity : BaseActivity<ActivityOrderBinding>(ActivityOrderBinding::i
         intent.putExtra("storeLongitude", data.result.storeLongitude)
         intent.putExtra("storeLatitude", data.result.storeLatitude)
         intent.putExtra("cartInfo", data)
+        intent.putExtra("deliveryFee",deliveryCost)
         intent.putExtra("orderIdx", response.result.userOrderIdx)
         startActivity(homeIntent)
         startActivity(intent)
-        /* 주문창 표시 */
     }
 
     override fun onPostOrderFailure(error: String) {
@@ -374,5 +395,4 @@ class OrderActivity : BaseActivity<ActivityOrderBinding>(ActivityOrderBinding::i
             }
         }
     }
-
 }

@@ -15,5 +15,7 @@ data class OrderListDetailResponse(
     val status:String,
     val totalPrice:String,
     val orderMenuInfo: List<OrderListMenuInfoResponse>,
-    val reviewScore:Int
+    val reviewScore:Int,
+    val deliveryFee:Int,
+    val businessStatus:String
 ):Serializable

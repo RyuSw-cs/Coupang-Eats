@@ -13,5 +13,6 @@ data class FavoriteDetailResponse(
     val reviewScore: Double,
     val deliveryFee: String,
     val storeBestCoupon: String,
-    val isNewStore: String
+    val isNewStore: String,
+    val businessStatus:String,
 )

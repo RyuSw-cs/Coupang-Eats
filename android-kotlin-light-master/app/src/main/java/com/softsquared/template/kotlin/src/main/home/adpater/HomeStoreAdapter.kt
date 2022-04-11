@@ -118,6 +118,7 @@ class HomeStoreAdapter(
                             intent.putExtra("longitude", long)
                             intent.putExtra("latitude", lat)
                             intent.putExtra("distance", distance)
+                            intent.putExtra("deliveryFee",deliveryFee)
                             intent.putExtra("storeInfo", this)
                             context.startActivity(intent)
                         }

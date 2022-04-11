@@ -51,6 +51,8 @@ class HomeFragment :
     var noAddressLong = 0.0
     var noAddressLat = 0.0
 
+    var deliveryFee = 0
+
     val bannerList = listOf(
         R.drawable.bg_home_banner_1,
         R.drawable.bg_home_banner_2,
@@ -68,7 +70,10 @@ class HomeFragment :
     private fun init() {
         with(binding) {
             binding.lyCartPrice.setOnClickListener {
-                startActivity(Intent(context, OrderActivity::class.java))
+                //여기에 배달비를 줘야함!
+                val intent = Intent(context, OrderActivity::class.java)
+                intent.putExtra("deliveryFee",deliveryFee)
+                startActivity(intent)
             }
             svSticky.setOnScrollChangeListener { _, _, _, _, _ ->
                 if (svSticky.isHeaderSticky) {

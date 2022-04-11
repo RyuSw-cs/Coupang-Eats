@@ -398,6 +398,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ly_coupon" />
 
+
+            <TextView
+                android:id="@+id/tv_delivery_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="배달비"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_14"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_order_price_title" />
+
             <TextView
                 android:id="@+id/bt_use_all_cash"
                 android:layout_width="wrap_content"
@@ -429,7 +441,7 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_content_14"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_order_price_title" />
+                app:layout_constraintTop_toBottomOf="@id/tv_delivery_title" />
 
             <TextView
                 android:id="@+id/tv_order_price_content"
@@ -441,6 +453,18 @@
                 android:textSize="@dimen/text_content_14"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/ly_coupon" />
+
+            <TextView
+                android:id="@+id/tv_delivery_fee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="+0원"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_14"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_order_price_content" />
+
 
             <TextView
                 android:id="@+id/tv_coupang_cash_won"
@@ -474,7 +498,7 @@
                 android:background="@drawable/bg_join_border_line"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toStartOf="@id/tv_coupang_cash_won"
-                app:layout_constraintTop_toBottomOf="@id/tv_order_price_content">
+                app:layout_constraintTop_toBottomOf="@id/tv_delivery_fee">
 
                 <EditText
                     android:id="@+id/et_coupang_cash"
