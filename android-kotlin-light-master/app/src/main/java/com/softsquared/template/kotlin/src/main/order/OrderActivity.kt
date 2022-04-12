@@ -166,6 +166,7 @@ class OrderActivity : BaseActivity<ActivityOrderBinding>(ActivityOrderBinding::i
                 "${ApplicationClass.DEC.format(response.result.totalPrice + deliveryCost)}원"
 
             if (response.result.distance > 5.0) {
+                noDeliveryDialog()
                 if (response.result.timeToGo == "N") {
                     //포장 안됨.
                     binding.lyOrderTab.visibility = View.GONE
@@ -180,7 +181,6 @@ class OrderActivity : BaseActivity<ActivityOrderBinding>(ActivityOrderBinding::i
                     binding.lyOrderTab.addTab(
                         binding.lyOrderTab.newTab().setText("포장 ${response.result.timeToGo}")
                     )
-                    noDeliveryDialog()
                     deliveryCheck = false
                 }
             } else {
