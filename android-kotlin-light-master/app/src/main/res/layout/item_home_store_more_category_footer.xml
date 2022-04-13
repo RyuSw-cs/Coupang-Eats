@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/tv_more_info"
         android:layout_margin="4dp"
-        android:elevation="10dp"
+        android:elevation="8dp"
         android:padding="25dp"/>
 
     <TextView
