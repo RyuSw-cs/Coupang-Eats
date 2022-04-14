@@ -70,5 +70,20 @@ class ReviewActivity : BaseActivity<ActivityReviewBinding>(ActivityReviewBinding
     fun reSortReview(sort: String) {
         this.sort = sort
         ReviewActivityService(this).tryGetReview(intent.getIntExtra("storeIdx", 0), sort, "Y")
+        val sort = when (sort) {
+            "recent" -> {
+                "최신순"
+            }
+            "review" -> {
+                "리뷰 도움 순"
+            }
+            "highScore" -> {
+                "별점 높은 순"
+            }
+            else -> {
+                "별점 낮은 순"
+            }
+        }
+        binding.btReviewSort.text = sort
     }
 }
