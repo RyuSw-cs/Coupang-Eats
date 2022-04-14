@@ -13,8 +13,7 @@ import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.config.ApplicationClass
 import com.softsquared.template.kotlin.config.BaseFragment
 import com.softsquared.template.kotlin.databinding.FragmentHomeBinding
-import com.softsquared.template.kotlin.src.main.home.adpater.HomeBannerAdapter
-import com.softsquared.template.kotlin.src.main.home.adpater.HomeStoreAdapter
+import com.softsquared.template.kotlin.src.main.home.adpater.*
 import com.softsquared.template.kotlin.src.main.home.bottomSheet.HomeDeliveryBottomSheetDialog
 import com.softsquared.template.kotlin.src.main.home.bottomSheet.HomeLeastCostBottomSheetDialog
 import com.softsquared.template.kotlin.src.main.home.bottomSheet.HomeSortBottomSheetDialog
@@ -189,6 +188,15 @@ class HomeFragment :
         //상점 성공
         dismissLoadingDialog()
         with(binding) {
+
+            rcvFranchiseeList.adapter = HomeFranchiseeAdapter(requireContext(),response.result.getFranchiseStore)
+            rcvNewStoreList.adapter = HomeNewStoreAdapter(requireContext(),response.result.getFranchiseStore)
+            rcvOnlyEatsList.adapter = HomeOnlyEatsAdapter(requireContext(),response.result.getFranchiseStore)
+
+            rcvFranchiseeList.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
+            rcvNewStoreList.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
+            rcvOnlyEatsList.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
+
             with(rcvHomeList) {
                 layoutManager =
                     LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
@@ -200,10 +208,10 @@ class HomeFragment :
                     }
                 }
                 //사용자의 위도 경도값도 넣어주기.
-                if (!addressDataCheck) {
-                    adapter = HomeStoreAdapter(requireContext(), list, noAddressLong, noAddressLat)
+                adapter = if (!addressDataCheck) {
+                    HomeStoreAdapter(requireContext(), list, noAddressLong, noAddressLat)
                 } else {
-                    adapter = HomeStoreAdapter(
+                    HomeStoreAdapter(
                         requireContext(),
                         list,
                         homeAddressResponse.result.nowAddress.addressLongitude,

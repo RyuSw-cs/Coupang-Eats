@@ -518,6 +518,147 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/sv_category" />
 
+
+            <TextView
+                android:id="@+id/tv_only_eats_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="이츠에만 있는 맛집"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_18"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/div_category" />
+
+            <ImageButton
+                android:id="@+id/ib_only_eats_back_btn"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_home_store_type_back_btn"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_only_eats_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_only_eats_title" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_only_eats_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_only_eats_title" />
+
+            <View
+                android:id="@+id/div_only_eats"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@color/grayForDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rcv_only_eats_list"/>
+
+            <TextView
+                android:id="@+id/tv_franchisee_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="인기 프랜차이즈"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_18"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/div_only_eats" />
+
+            <ImageButton
+                android:id="@+id/ib_franchisee_back_btn"
+                android:layout_width="20dp"
+                android:scaleType="fitCenter"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/activity_vertical_margin"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_home_store_type_back_btn"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_franchisee_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_franchisee_title" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_franchisee_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_franchisee_title" />
+
+            <View
+                android:id="@+id/div_franchisee"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@color/grayForDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rcv_franchisee_list"/>
+
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:id="@+id/vp2_sub_banner"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/div_franchisee"/>
+
+            <View
+                android:id="@+id/div_sub_banner"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/grayForDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vp2_sub_banner"/>
+
+
+            <TextView
+                android:id="@+id/tv_new_store_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="새로 들어왔어요!"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_content_18"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/div_sub_banner" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_new_store_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_new_store_title" />
+
+            <View
+                android:id="@+id/div_new_store"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:background="@color/grayForDivider"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rcv_new_store_list"/>
+
+
             <TextView
                 android:id="@+id/tv_choice_store"
                 android:layout_width="wrap_content"
@@ -529,7 +670,7 @@
                 android:textSize="@dimen/text_content_18"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/div_category" />
+                app:layout_constraintTop_toBottomOf="@id/div_new_store" />
 
 
             <HorizontalScrollView
