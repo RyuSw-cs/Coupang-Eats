@@ -60,4 +60,4 @@
 ## 👩‍👩‍👦‍👦**Member**
 
 - Yu Seung Woo(Client): [Github](https://github.com/RyuSw-cs), [Blog](https://blog.naver.com/rsw1452)
-- Moon Eun Jeong(Server): [Github](https://github.com/EUNJEONGMUN)
+- Moon Eun Jeong(Server): [Github](https://github.com/EUNJEONGMUN), [Blog](https://graph-paper.tistory.com)
