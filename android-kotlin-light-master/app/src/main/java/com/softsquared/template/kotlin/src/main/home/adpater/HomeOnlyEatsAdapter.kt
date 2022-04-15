@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.softsquared.template.kotlin.config.ApplicationClass
 import com.softsquared.template.kotlin.databinding.ItemHomeMoreCategoryBinding
-import com.softsquared.template.kotlin.databinding.ItemHomeStoreMoreCategoryFooterBinding
+import com.softsquared.template.kotlin.databinding.ItemHomeMoreCategoryFooterBinding
 import com.softsquared.template.kotlin.src.main.home.models.rising.store.models.HomeStoreDetailResponse
 import com.softsquared.template.kotlin.src.main.home.models.rising.store.models.HomeStoreInfoResponse
 
@@ -17,7 +17,7 @@ class HomeOnlyEatsAdapter(val context: Context, val data: List<HomeStoreInfoResp
     inner class FranchiseeHolder(val binding: ItemHomeMoreCategoryBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-    inner class FranchiseeFooter(val footerBinding: ItemHomeStoreMoreCategoryFooterBinding) :
+    inner class FranchiseeFooter(val footerBinding: ItemHomeMoreCategoryFooterBinding) :
         RecyclerView.ViewHolder(footerBinding.root)
 
     override fun getItemViewType(position: Int): Int {
@@ -34,7 +34,7 @@ class HomeOnlyEatsAdapter(val context: Context, val data: List<HomeStoreInfoResp
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val holder = when (viewType) {
             ApplicationClass.FOOTER -> {
-                val view = ItemHomeStoreMoreCategoryFooterBinding.inflate(
+                val view = ItemHomeMoreCategoryFooterBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent,
                     false

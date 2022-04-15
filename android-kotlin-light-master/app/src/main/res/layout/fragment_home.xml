@@ -616,6 +616,24 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/div_franchisee"/>
 
+            <TextView
+                android:id="@+id/tv_sub_banner_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/view_margin_12"
+                android:background="@drawable/bg_banner_count"
+                android:gravity="center"
+                android:paddingStart="12dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="4dp"
+                android:text="1/3"
+                android:textColor="@color/white"
+                android:layout_marginBottom="12dp"
+                android:textSize="@dimen/text_content_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/vp2_sub_banner" />
+
             <View
                 android:id="@+id/div_sub_banner"
                 android:layout_width="match_parent"

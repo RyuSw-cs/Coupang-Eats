@@ -58,8 +58,10 @@ class HomeFragment :
         R.drawable.bg_home_banner_3
     )
     var bannerPosition = 0
+    var subBannerPosition = 0
     lateinit var bannerHandler: Handler
     lateinit var sliderRunnable: Runnable
+    lateinit var subSliderRunnable: Runnable
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -71,7 +73,7 @@ class HomeFragment :
             binding.lyCartPrice.setOnClickListener {
                 //여기에 배달비를 줘야함!
                 val intent = Intent(context, OrderActivity::class.java)
-                intent.putExtra("deliveryFee",deliveryFee)
+                intent.putExtra("deliveryFee", deliveryFee)
                 startActivity(intent)
             }
             svSticky.setOnScrollChangeListener { _, _, _, _, _ ->
@@ -93,15 +95,48 @@ class HomeFragment :
                 }
             }
 
+            vp2SubBanner.adapter = HomeBannerAdapter(bannerList)
+
             vp2Banner.adapter = HomeBannerAdapter(
                 bannerList
             )
-
+            subSliderRunnable = Runnable {
+                vp2SubBanner.setCurrentItem(++subBannerPosition, true)
+            }
             //홈 배너 자동 슬라이딩
             sliderRunnable = Runnable {
                 vp2Banner.setCurrentItem(++bannerPosition, true)
             }
             bannerHandler = Handler(Looper.getMainLooper())
+
+
+            vp2SubBanner.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+                override fun onPageSelected(position: Int) {
+                    binding.tvSubBannerCount.text =
+                        "${(position % bannerList.size) + 1}/${bannerList.size}"
+                    subBannerPosition = position
+                    bannerHandler.postDelayed(subSliderRunnable, 2000)
+                }
+
+                override fun onPageScrollStateChanged(state: Int) {
+                    super.onPageScrollStateChanged(state)
+                    when (state) {
+                        //멈춤
+                        ViewPager2.SCROLL_STATE_IDLE -> {
+                            bannerHandler.postDelayed(subSliderRunnable, 2000)
+                        }
+
+                        //드래그
+                        ViewPager2.SCROLL_STATE_DRAGGING -> {
+                            bannerHandler.removeCallbacks(subSliderRunnable)
+                        }
+
+                        ViewPager2.SCROLL_STATE_SETTLING -> {
+                            bannerHandler.removeCallbacks(subSliderRunnable)
+                        }
+                    }
+                }
+            })
 
             vp2Banner.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                 override fun onPageSelected(position: Int) {
@@ -189,13 +224,19 @@ class HomeFragment :
         dismissLoadingDialog()
         with(binding) {
 
-            rcvFranchiseeList.adapter = HomeFranchiseeAdapter(requireContext(),response.result.getFranchiseStore)
-            rcvNewStoreList.adapter = HomeNewStoreAdapter(requireContext(),response.result.getFranchiseStore)
-            rcvOnlyEatsList.adapter = HomeOnlyEatsAdapter(requireContext(),response.result.getFranchiseStore)
+            rcvFranchiseeList.adapter =
+                HomeFranchiseeAdapter(requireContext(), response.result.getFranchiseStore)
+            rcvNewStoreList.adapter =
+                HomeNewStoreAdapter(requireContext(), response.result.getFranchiseStore)
+            rcvOnlyEatsList.adapter =
+                HomeOnlyEatsAdapter(requireContext(), response.result.getFranchiseStore)
 
-            rcvFranchiseeList.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
-            rcvNewStoreList.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
-            rcvOnlyEatsList.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
+            rcvFranchiseeList.layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            rcvNewStoreList.layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            rcvOnlyEatsList.layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
             with(rcvHomeList) {
                 layoutManager =
