@@ -224,19 +224,85 @@ class HomeFragment :
         dismissLoadingDialog()
         with(binding) {
 
-            rcvFranchiseeList.adapter =
-                HomeFranchiseeAdapter(requireContext(), response.result.getFranchiseStore)
-            rcvNewStoreList.adapter =
-                HomeNewStoreAdapter(requireContext(), response.result.getFranchiseStore)
-            rcvOnlyEatsList.adapter =
-                HomeOnlyEatsAdapter(requireContext(), response.result.getFranchiseStore)
+            with(rcvFranchiseeList) {
+                if (response.result.getFranchiseStore.isEmpty()) {
+                    tvFranchiseeTitle.visibility = View.GONE
+                    ibFranchiseeBackBtn.visibility = View.GONE
+                }
+                layoutManager =
+                    LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                val list = mutableListOf<HomeStoreInfoResponse>()
+                for (data in response.result.getFranchiseStore.indices) {
+                    //거리가 10km 이상 차이남
+                    if (response.result.getFranchiseStore[data].storeInfo.distance < 5.0) {
+                        list.add(response.result.getFranchiseStore[data])
+                    }
+                }
+                //사용자의 위도 경도값도 넣어주기.
+                adapter = if (!addressDataCheck) {
+                    HomeFranchiseeAdapter(requireContext(), list, noAddressLong, noAddressLat)
+                } else {
+                    HomeFranchiseeAdapter(
+                        requireContext(),
+                        list,
+                        homeAddressResponse.result.nowAddress.addressLongitude,
+                        homeAddressResponse.result.nowAddress.addressLatitude
+                    )
+                }
+            }
 
-            rcvFranchiseeList.layoutManager =
-                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-            rcvNewStoreList.layoutManager =
-                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-            rcvOnlyEatsList.layoutManager =
-                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            with(rcvNewStoreList) {
+                if (response.result.getFranchiseStore.isEmpty()) {
+                    tvNewStoreTitle.visibility = View.GONE
+                }
+                layoutManager =
+                    LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                val list = mutableListOf<HomeStoreInfoResponse>()
+                for (data in response.result.getNewStore.indices) {
+                    //거리가 10km 이상 차이남
+                    if (response.result.getNewStore[data].storeInfo.distance < 5.0) {
+                        list.add(response.result.getNewStore[data])
+                    }
+                }
+                //사용자의 위도 경도값도 넣어주기.
+                adapter = if (!addressDataCheck) {
+                    HomeNewStoreAdapter(requireContext(), list, noAddressLong, noAddressLat)
+                } else {
+                    HomeNewStoreAdapter(
+                        requireContext(),
+                        list,
+                        homeAddressResponse.result.nowAddress.addressLongitude,
+                        homeAddressResponse.result.nowAddress.addressLatitude
+                    )
+                }
+            }
+
+            with(rcvOnlyEatsList) {
+                if (response.result.getFranchiseStore.isEmpty()) {
+                    tvOnlyEatsTitle.visibility = View.GONE
+                    ibOnlyEatsBackBtn.visibility = View.GONE
+                }
+                layoutManager =
+                    LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+                val list = mutableListOf<HomeStoreInfoResponse>()
+                for (data in response.result.getOnlyEatsStore.indices) {
+                    //거리가 10km 이상 차이남
+                    if (response.result.getOnlyEatsStore[data].storeInfo.distance < 5.0) {
+                        list.add(response.result.getOnlyEatsStore[data])
+                    }
+                }
+                //사용자의 위도 경도값도 넣어주기.
+                adapter = if (!addressDataCheck) {
+                    HomeOnlyEatsAdapter(requireContext(), list, noAddressLong, noAddressLat)
+                } else {
+                    HomeOnlyEatsAdapter(
+                        requireContext(),
+                        list,
+                        homeAddressResponse.result.nowAddress.addressLongitude,
+                        homeAddressResponse.result.nowAddress.addressLatitude
+                    )
+                }
+            }
 
             with(rcvHomeList) {
                 layoutManager =

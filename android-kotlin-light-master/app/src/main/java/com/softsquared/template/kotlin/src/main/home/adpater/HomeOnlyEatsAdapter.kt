@@ -1,18 +1,26 @@
 package com.softsquared.template.kotlin.src.main.home.adpater
 
 import android.content.Context
+import android.content.Intent
+import android.graphics.drawable.ShapeDrawable
+import android.graphics.drawable.shapes.OvalShape
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.softsquared.template.kotlin.R
 import com.softsquared.template.kotlin.config.ApplicationClass
 import com.softsquared.template.kotlin.databinding.ItemHomeMoreCategoryBinding
 import com.softsquared.template.kotlin.databinding.ItemHomeMoreCategoryFooterBinding
 import com.softsquared.template.kotlin.src.main.home.models.rising.store.models.HomeStoreDetailResponse
 import com.softsquared.template.kotlin.src.main.home.models.rising.store.models.HomeStoreInfoResponse
+import com.softsquared.template.kotlin.src.main.storeInfo.StoreInfoActivity
 
-class HomeOnlyEatsAdapter(val context: Context, val data: List<HomeStoreInfoResponse>) :
+class HomeOnlyEatsAdapter(
+    val context: Context, val data: List<HomeStoreInfoResponse>, private val long: Double,
+    private val lat: Double
+) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     inner class FranchiseeHolder(val binding: ItemHomeMoreCategoryBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -58,10 +66,14 @@ class HomeOnlyEatsAdapter(val context: Context, val data: List<HomeStoreInfoResp
             with(holder) {
                 with(data[position].storeInfo) {
                     Glide.with(context)
-                        .load(storeImgUrl)
+                        .load(storeImgUrl[0])
                         .centerCrop()
                         .into(binding.ivMainImg)
 
+                    binding.ivType.setImageResource(R.drawable.ic_home_only_eats)
+
+                    binding.tvStoreName.text = storeName
+                    binding.tvDistance.text = "${distance}km"
                     binding.tvDeliveryFee.text = "배달비 $deliveryFee"
                     if (reviewCount != 0) {
                         binding.tvReviewCount.text = "(${reviewCount})"
@@ -69,6 +81,17 @@ class HomeOnlyEatsAdapter(val context: Context, val data: List<HomeStoreInfoResp
                         binding.ivReviewStar.visibility = View.GONE
                         binding.tvReviewCount.visibility = View.GONE
                         binding.tvReviewDiv.visibility = View.GONE
+                    }
+                    itemView.setOnClickListener {
+                        //가게 상세보기 실행
+                        val intent = Intent(context, StoreInfoActivity::class.java)
+                        intent.putExtra("storeIdx", storeIdx)
+                        intent.putExtra("longitude",long)
+                        intent.putExtra("latitude", lat)
+                        intent.putExtra("distance", distance)
+                        intent.putExtra("deliveryFee", deliveryFee)
+                        intent.putExtra("storeInfo", this)
+                        context.startActivity(intent)
                     }
                 }
             }
