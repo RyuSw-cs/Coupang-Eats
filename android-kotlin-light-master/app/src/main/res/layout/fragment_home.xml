@@ -158,6 +158,34 @@
                         app:drawableTopCompat="@drawable/ic_home_take_out" />
 
                     <TextView
+                        android:id="@+id/tv_new_store"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/view_margin_8"
+                        android:drawablePadding="@dimen/view_margin_6"
+                        android:gravity="center|bottom"
+                        android:text="신규 맛집"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_content_14"
+                        android:textStyle="bold"
+                        app:drawableTopCompat="@drawable/ic_home_new_store" />
+
+                    <TextView
+                        android:id="@+id/tv_one_serving"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/view_margin_8"
+                        android:drawablePadding="@dimen/view_margin_6"
+                        android:gravity="center|bottom"
+                        android:text="@string/home_tv_one_serving"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_content_14"
+                        android:textStyle="bold"
+                        app:drawableTopCompat="@drawable/ic_home_one_serving" />
+
+                    <TextView
                         android:id="@+id/tv_korean_food"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -478,34 +506,6 @@
                         android:textSize="@dimen/text_content_14"
                         android:textStyle="bold"
                         app:drawableTopCompat="@drawable/ic_home_franchisee" />
-
-                    <TextView
-                        android:id="@+id/tv_new_store"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/view_margin_8"
-                        android:drawablePadding="@dimen/view_margin_6"
-                        android:gravity="center|bottom"
-                        android:text="@string/home_tv_grill"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/text_content_14"
-                        android:textStyle="bold"
-                        app:drawableTopCompat="@drawable/ic_home_new_store" />
-
-                    <TextView
-                        android:id="@+id/tv_one_serving"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="@dimen/view_margin_8"
-                        android:drawablePadding="@dimen/view_margin_6"
-                        android:gravity="center|bottom"
-                        android:text="@string/home_tv_one_serving"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/text_content_14"
-                        android:textStyle="bold"
-                        app:drawableTopCompat="@drawable/ic_home_one_serving" />
                 </LinearLayout>
             </HorizontalScrollView>
 

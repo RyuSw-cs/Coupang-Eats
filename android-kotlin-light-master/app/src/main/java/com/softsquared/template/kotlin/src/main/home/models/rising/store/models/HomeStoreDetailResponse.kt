@@ -18,6 +18,7 @@ data class HomeStoreDetailResponse(
     val createdAt: String,
     val reviewScore: Double,
     val reviewCount: Int,
+    val storeLogoUrl:String,
     val orderCount: Int,
     val distance: Double,
     val deliveryFee: String,
