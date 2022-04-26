@@ -81,7 +81,8 @@ class HomeFranchiseeAdapter(
                     binding.ivType.background = ShapeDrawable(OvalShape())
                     binding.ivType.clipToOutline = true
 
-                    binding.ivMainImg.alpha = 100f
+                    //투명도 변경
+                    //binding.ivMainImg.alpha = 0.2f
 
                     if (storeLogoUrl == "N") {
                         binding.ivType.visibility = View.GONE

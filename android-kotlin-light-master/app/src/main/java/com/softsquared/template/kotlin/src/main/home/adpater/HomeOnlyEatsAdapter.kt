@@ -70,11 +70,21 @@ class HomeOnlyEatsAdapter(
                         .centerCrop()
                         .into(binding.ivMainImg)
 
-                    binding.ivType.setImageResource(R.drawable.ic_home_only_eats)
+                    Glide.with(context)
+                        .load(storeLogoUrl)
+                        .centerCrop()
+                        .into(binding.ivType)
+
+                    binding.ivType.background = ShapeDrawable(OvalShape())
+                    binding.ivType.clipToOutline = true
+
+                    //투명도 변경
+                    //binding.ivMainImg.alpha = 0.2f
 
                     binding.tvStoreName.text = storeName
                     binding.tvDistance.text = "${distance}km"
                     binding.tvDeliveryFee.text = "배달비 $deliveryFee"
+
                     if (reviewCount != 0) {
                         binding.tvReviewCount.text = "(${reviewCount})"
                     } else {
